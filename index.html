@@ -2337,7 +2337,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
   .hero-img-wrap:hover{transform:translateY(-3px);box-shadow:0 18px 46px rgba(45,58,46,.2)}
   .section{padding:70px 20px}
   .section-title h2{font-size:32px}
-  .game-grid{grid-template-columns:repeat(2,1fr);max-width:780px}
+  .game-grid{grid-template-columns:repeat(2,1fr);max-width:880px}
   .svc-card{max-width:600px;padding:264px 10px 44px}
   .mascot-wrap::after{width:460px;height:460px;margin:-230px 0 0 -230px}
   .sky-balloon{display:block}
@@ -2712,20 +2712,23 @@ html.poster-open,html.poster-open body{overflow:hidden}
 .luna-jump:hover{filter:brightness(1.05);box-shadow:0 8px 22px rgba(138,107,240,.46)}
 .luna-jump:active{transform:translateY(2px)}
 
-/* ========== 大屏加宽（≥1200px） ========== */
+/* ========== 大屏加宽（≥1200px）：一行 3 张、封面更大 ========== */
 @media (min-width:1200px){
   .hero-img-wrap{max-width:780px}
-  .game-grid{grid-template-columns:repeat(3,1fr);max-width:1100px}
+  .game-grid{grid-template-columns:repeat(3,1fr);max-width:min(1240px,calc(100% - 200px));gap:24px}
+  .game-body .game-name{font-size:19.5px}
   .svc-card{max-width:680px}
   .article-list{max-width:900px}
   .faq-list{max-width:840px}
   .nr-search,.nr-chips{max-width:600px}
 }
 
-/* ========== 超宽屏再放宽（≥1500px） ========== */
+/* ========== 超宽屏：卡片放大到「一行 3 张、共两行」（≥1500px） ========== */
 @media (min-width:1500px){
   .hero-img-wrap{max-width:880px}
-  .game-grid{grid-template-columns:repeat(5,1fr);max-width:1440px;gap:20px}
+  .game-grid{grid-template-columns:repeat(3,1fr);max-width:min(1440px,calc(100% - 200px));gap:26px}
+  .game-body .game-name{font-size:21px}
+  .game-body .game-sub{font-size:12.5px;padding:8px 16px}
   .article-list{max-width:1000px}
   .faq-list{max-width:900px}
   .svc-card{max-width:740px}
