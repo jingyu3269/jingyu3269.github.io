@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jingyu3269.github.io/game-guide/sitemap.xml
