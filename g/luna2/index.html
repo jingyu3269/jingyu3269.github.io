@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>露娜2：拾光之约攻略合集 · 精品手游攻略站</title>
+<meta name="description" content="露娜2：拾光之约攻略共 10 篇：经典露娜IP · 奇幻冒险。首款萌世代官方正版，经典露娜IP回归：自由转职、社交满格，情侣配对与家族玩法原汁原味。12 月 10 日公测——开服前把…">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ac:#3A7DA1;--ac-soft:#E7F2F8;--ink:#2D3A2E;--ink2:#6B7A6C;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.65;
+  background:
+    radial-gradient(circle at 10% 0%, #E7F2F8 0%, transparent 42%),
+    radial-gradient(circle at 94% 4%, #FFF3E2 0%, transparent 40%),
+    var(--paper);
+  min-height:100vh;padding:0 14px 56px;
+}
+.wrap{max-width:760px;margin:0 auto}
+/* 顶栏 */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 2px;margin:0 -14px 14px;padding:10px 16px;
+  background:rgba(255,251,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+.back{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-weight:700;
+}
+.back:hover{color:var(--ac);border-color:var(--ac)}
+.brand{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand i{font-style:normal;color:var(--ac)}
+/* 头图：按原图比例展示，不裁切，避免切头 */
+.hero{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:#1B1526;
+  border:3px solid #fff;box-shadow:0 12px 26px -10px rgba(80,50,30,.35);
+}
+.hero img{width:100%;height:auto;display:block}
+.hero-head{padding:14px 4px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 10px;
+  font-size:11.5px;font-weight:800;border-radius:999px;
+  background:var(--ac-soft);color:var(--ac);
+  border:1.5px solid rgba(0,0,0,.04);
+}
+.chip.hot{background:#FF4444;color:#fff;border-color:#FF4444}
+.hero-head h1{font-size:25px;font-weight:900;letter-spacing:.5px;line-height:1.3}
+.tagline{font-size:12.5px;color:var(--ink2);margin-top:4px}
+/* 简介 & 信息卡 */
+.intro{
+  margin:16px 2px 14px;font-size:13.5px;color:var(--ink2);
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;
+}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+.fact{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 13px;
+  box-shadow:0 6px 16px -12px rgba(80,50,30,.3);
+}
+.fk{display:block;font-size:11px;color:var(--ink2);letter-spacing:.4px}
+.fv{font-size:13px;font-weight:800;color:var(--ac)}
+/* 文章列表 */
+.list h2{font-size:16px;display:flex;align-items:baseline;gap:8px}
+.list h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.entries{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.entry{
+  display:flex;align-items:stretch;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:13px 14px;text-decoration:none;color:var(--ink);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 22px -14px var(--ac)}
+.e-date{
+  flex:0 0 52px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--ac-soft);border-radius:12px;color:var(--ac);
+}
+.e-date i{font-style:normal;font-size:14.5px;font-weight:900;font-variant-numeric:tabular-nums}
+.e-date em{font-style:normal;font-size:10px;opacity:.75}
+.e-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.e-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--ink2)}
+.e-tag{
+  display:inline-flex;align-items:center;height:17px;padding:0 7px;
+  background:var(--ac);color:#fff;border-radius:6px;
+  font-size:10.5px;font-weight:800;line-height:1;
+}
+.e-title{font-size:14.5px;font-weight:800;line-height:1.45}
+.e-dek{
+  font-size:12px;color:var(--ink2);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.e-foot{font-size:10.5px;color:#B7A597;margin-top:2px}
+.e-arrow{
+  flex:0 0 auto;align-self:center;color:var(--ac);
+  font-weight:900;font-size:16px;opacity:.55;transition:transform .18s,opacity .18s;
+}
+.entry:hover .e-arrow{transform:translateX(3px);opacity:1}
+/* 底部 CTA & 页脚 */
+.cta{margin:26px 0 8px;text-align:center}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(160deg,var(--ac),var(--ac));
+  color:#fff;text-decoration:none;font-weight:900;font-size:14px;
+  padding:12px 26px;border-radius:999px;
+  box-shadow:0 8px 18px -6px var(--ac);
+}
+.cta-btn:hover{filter:brightness(1.06)}
+.cta p{margin-top:10px;font-size:11.5px;color:var(--ink2)}
+.foot{margin-top:22px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+.foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
+.foot a:hover{color:var(--ac)}
+
+/* ===== 官网式头图 ===== */
+.lhero{
+  position:relative;overflow:hidden;border-radius:24px;color:#fff;
+  background:linear-gradient(135deg,var(--hg1,#5E9BBC) 0%,var(--hg2,#8CC0D6) 42%,var(--hg3,#CBE8F0) 100%);
+  border:3px solid #fff;box-shadow:0 16px 34px -14px rgba(40,92,120,.55);
+}
+.lhero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 82% 6%,rgba(255,255,255,.42),transparent 44%),
+    radial-gradient(circle at 12% 94%,rgba(255,255,255,.22),transparent 42%);
+}
+.lhero-in{position:relative;display:flex;align-items:stretch}
+.lhero-txt{position:relative;z-index:2;flex:1 1 58%;min-width:0;padding:24px 10px 26px 24px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2.2px;color:rgba(255,255,255,.86);margin-bottom:10px}
+.lhero h1{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-size:31px;font-weight:900;letter-spacing:1.5px;line-height:1.2;
+  text-shadow:0 3px 10px rgba(18,60,84,.38);
+}
+.ld-badge{
+  display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:7px;
+  background:linear-gradient(160deg,var(--hl1,#FFB84D),var(--hl2,#FF7F26));
+  font-size:12px;font-weight:900;letter-spacing:.5px;text-shadow:none;
+  box-shadow:0 4px 12px -3px rgba(208,96,10,.65);
+}
+.ldesc{margin-top:12px;max-width:430px;font-size:12.8px;line-height:1.85;color:rgba(255,255,255,.94)}
+.ltags{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px;list-style:none}
+.ltags li{
+  display:inline-flex;align-items:center;height:23px;padding:0 8px;border-radius:999px;
+  font-size:10.5px;font-weight:700;color:#fff;letter-spacing:0;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.42);
+  backdrop-filter:blur(2px);
+}
+.cd{margin-top:16px}
+.cd-label{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.3px}
+.cd-label b{font-weight:900;color:#fff}
+.cd-nums{display:flex;gap:8px;margin-top:8px}
+.cd-u{
+  width:50px;height:54px;border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);
+  backdrop-filter:blur(3px);
+  box-shadow:0 5px 14px -8px rgba(20,60,84,.6),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.cd-u em{
+  font-style:normal;font-size:20px;font-weight:900;line-height:1;
+  letter-spacing:.5px;font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 6px rgba(20,60,84,.32);
+}
+.cd-u i{font-style:normal;font-size:10px;margin-top:5px;opacity:.85}
+.cd-open{
+  margin-top:10px;font-size:13.5px;font-weight:800;
+  background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.45);
+  border-radius:12px;padding:10px 14px;display:inline-block;
+}
+.lbtn{
+  margin-top:18px;display:inline-flex;align-items:center;gap:7px;
+  border:0;cursor:pointer;padding:12px 26px;border-radius:999px;
+  font-family:inherit;font-size:14px;font-weight:900;letter-spacing:.4px;color:#fff;
+  background:linear-gradient(135deg,var(--hb1,#FF7FB0),var(--hb2,#F0437C));
+  box-shadow:0 12px 24px -10px var(--hbs,rgba(232,52,112,.9)),inset 0 1px 0 rgba(255,255,255,.42);
+  transition:transform .16s,filter .16s;
+}
+.lbtn:hover{filter:brightness(1.05)}
+.lbtn:active{transform:scale(.97)}
+.lbtn i{font-style:normal;font-size:13px}
+.lhero-art{position:relative;z-index:1;flex:0 0 44%;align-self:stretch;min-width:0}
+.lhero-art img{
+  width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%);
+  mask-image:linear-gradient(to right,transparent 0,#000 30%);
+}
+.lfeat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.lfeat img{
+  width:100%;height:auto;display:block;border-radius:16px;
+  border:3px solid #fff;box-shadow:0 10px 24px -16px rgba(40,92,120,.9);
+}
+/* 职业一览 */
+.ljobs{margin:22px 0 6px}
+.ljobs-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ljobs-h h2{font-size:16px;font-weight:900}
+.ljobs-h span{font-size:11.5px;color:var(--ink2)}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.jcard{
+  background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 8px 20px -16px rgba(80,50,30,.45);
+}
+.jcard img{width:100%;height:auto;display:block;aspect-ratio:1.51/1;object-fit:cover;object-position:center top}
+.jbody{padding:9px 11px 11px}
+.jbody b{display:block;font-size:13.5px;font-weight:900}
+.jbody em{display:block;font-style:normal;font-size:11px;color:var(--ink2);margin-top:2px;line-height:1.5}
+.jbody i{
+  display:inline-block;font-style:normal;margin-top:6px;
+  font-size:10px;font-weight:800;color:var(--ac);
+  background:var(--ac-soft);border-radius:6px;padding:2px 7px;
+  font-variant-numeric:tabular-nums;
+}
+/* 登录界面实拍 */
+.lshot{margin:18px 0 4px}
+.lshot img{
+  width:100%;height:auto;display:block;border-radius:18px;
+  border:3px solid #fff;box-shadow:0 12px 26px -18px rgba(40,60,90,.9);
+}
+.lshot figcaption{margin-top:8px;text-align:center;font-size:11.5px;color:var(--ink2)}
+/* 预约弹层 */
+.bk{
+  position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(16,32,46,.52);backdrop-filter:blur(5px);
+}
+.bk[hidden]{display:none}
+.bk-card{
+  position:relative;width:100%;max-width:352px;background:#fff;
+  border-radius:22px;padding:22px 20px 6px;
+  box-shadow:0 26px 60px -20px rgba(8,28,42,.75);
+  animation:bkIn .22s ease-out;
+}
+@keyframes bkIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.bk-x{
+  position:absolute;right:8px;top:6px;width:32px;height:32px;border:0;background:none;
+  font-size:20px;line-height:1;color:#BFAFA2;cursor:pointer;border-radius:50%;
+}
+.bk-x:focus{outline:none}
+.bk-x:focus-visible{outline:2px solid #2C7A9E;outline-offset:2px}
+.bk-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:2px;color:#9FB3C0}
+.bk-card h3{margin-top:6px;font-size:19px;font-weight:900;color:#2D3A2E}
+.bk-desc{margin-top:8px;font-size:12.5px;line-height:1.75;color:#6B7A6C}
+.bk-id{
+  margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  width:100%;box-sizing:border-box;font-family:inherit;text-align:left;
+  background:#F4FAFD;border:1.5px dashed #B7D8E8;border-radius:14px;padding:10px 12px;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:background .16s,border-color .16s,transform .12s;
+}
+.bk-id:hover{background:#EAF5FB;border-color:#8FC7E0}
+.bk-id:active{transform:scale(.985)}
+.bk-id:focus{outline:none}
+.bk-id:focus-visible{outline:2px solid #2C7A9E;outline-offset:2px}
+.bk-id.done{background:#EAF9F1;border-color:#9FDCBB}
+.bk-id span{
+  font-size:14.5px;font-weight:900;color:#2C7A9E;letter-spacing:.6px;
+  font-variant-numeric:tabular-nums;word-break:break-all;
+}
+.bk-id em{
+  flex:0 0 auto;font-style:normal;font-size:11.5px;font-weight:800;color:#2C7A9E;
+  background:#fff;border:1.5px solid #B7D8E8;border-radius:999px;padding:5px 12px;
+  white-space:nowrap;
+}
+.bk-id.done em{color:#1E9A63;border-color:#9FDCBB}
+.bk-tip{margin:10px 0 16px;font-size:11.5px;color:#B7A597;text-align:center;line-height:1.6}
+@media (max-width:620px){
+  .lhero{border-radius:20px}
+  .lhero-in{flex-direction:column-reverse}
+  .lhero-art{flex:0 0 auto;height:auto}
+  .lhero-art img{
+    height:auto;object-fit:fill;
+    -webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);
+  }
+  .lhero-txt{padding:14px 16px 20px}
+  .lhero h1{font-size:26px}
+  .ldesc{font-size:12.5px;line-height:1.8}
+  .cd-u{width:46px;height:50px}
+  .cd-u em{font-size:18px}
+  .lbtn{width:100%;justify-content:center;padding:12px 18px}
+  .lfeat{gap:8px}
+  .jgrid{grid-template-columns:1fr 1fr;gap:8px}
+  .jbody{padding:8px 9px 10px}
+  .jbody b{font-size:12.5px}
+  .jbody em{font-size:10.5px;margin-top:1px}
+  .jbody i{font-size:9.5px;margin-top:5px}
+  .ljobs-h h2{font-size:15px}
+  .lshot img{border-radius:14px}
+}
+
+/* ===== 官网式头图里的各个框：流光 ===== */
+.lhero{--flA:0deg;border-color:transparent;
+  background-image:linear-gradient(135deg,var(--hg1,#5E9BBC) 0%,var(--hg2,#8CC0D6) 42%,var(--hg3,#CBE8F0) 100%),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.ltags li,.cd-u,.cd-open,.lbtn{position:relative}
+.ltags li::after,.cd-u::after,.cd-open::after,.lbtn::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.ltags li::after{inset:-1px;padding:1.2px}
+.cd-u::after,.cd-open::after{inset:-1.5px;padding:1.7px}
+.lbtn::after{inset:-2.4px;padding:2.6px}
+/* 图片外的框：图片本身没有伪元素，靠外层 .lframe 画环 */
+.lframe{position:relative;border-radius:18px;line-height:0}
+.lframe img{border:0;border-radius:18px}
+.lframe::after{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:3px;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+    #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+@media (prefers-reduced-motion:reduce){
+  .lhero,.lframe::after,.ltags li::after,.cd-u::after,.cd-open::after,.lbtn::after{animation:none}
+}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+}
+/* ========== 方框 · 流光边框（光带绕框旋转，与首页一致） ========== */
+@property --flA{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes flowBorder{to{--flA:360deg}}
+.back,.chip,.intro,.fact,.entry,.jv-card,.bk-card,.cta-btn{position:relative}
+.back::after,.intro::after,.fact::after,.entry::after,.jv-card::after{inset:-2px;padding:2.2px}
+.chip::after,.bk-id::after{inset:-1.5px;padding:1.7px}
+.cta-btn::after{inset:-2.4px;padding:2.6px}
+.bk-card::after{inset:0;padding:2.2px}
+.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.back:hover::after,.chip:hover::after,.entry:hover::after{animation-duration:2s}
+.hero,.jcard{
+  --flA:0deg;border-color:transparent;
+  background-image:linear-gradient(#1B1526,#1B1526),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.jcard{
+  background-image:linear-gradient(#fff,#fff),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.jcard,.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../">← 返回首页</a>
+  <span class="brand">精品<i>手游</i>攻略站</span>
+</header>
+
+<main class="wrap">
+  <section class="lhero">
+  <div class="lhero-in">
+    <div class="lhero-txt">
+      <p class="eyebrow">LUNA2 ONLINE · 十六年之约</p>
+      <h1>拾光之约<span class="ld-badge">12.10 公测</span></h1>
+      <p class="ldesc">从阿克勒平原的风车下出发，人类与精灵两族、战士 / 魔法师 / 刺客三职业起步。副本、野外 BOSS、摆摊交易，再加上农场种菜、河边钓鱼、小屋装扮。不改版、原汁原味，当年一起熬夜的那批人，该回来了。</p>
+      <ul class="ltags"><li>PC 端游</li><li>原汁原味</li><li>Q 萌画风</li><li>自由转职</li><li>生活玩法</li><li>约会配对</li></ul>
+      <div class="cd" id="cdBox">
+        <p class="cd-label">距 <b>12.10</b> 公测（暂定）</p>
+        <div class="cd-nums">
+          <div class="cd-u"><em id="cdD">--</em><i>天</i></div>
+          <div class="cd-u"><em id="cdH">--</em><i>时</i></div>
+          <div class="cd-u"><em id="cdM">--</em><i>分</i></div>
+          <div class="cd-u"><em id="cdS">--</em><i>秒</i></div>
+        </div>
+      </div>
+      <button class="lbtn" type="button" onclick="openBooking()"><i>🎁</i>预约公测 · 领预约礼包</button>
+    </div>
+    <div class="lhero-art">
+      <img src="../../assets/luna-hero.webp" alt="露娜2：拾光之约 主视觉" fetchpriority="high">
+    </div>
+  </div>
+</section>
+<section class="lfeat"><div class="lframe"><img src="../../assets/luna-f1.webp" alt="露娜2 社交满格：家族温暖 亲密配对" loading="lazy" decoding="async"></div><div class="lframe"><img src="../../assets/luna-f2.webp" alt="露娜2 自由转职：技能自由 转职丰富" loading="lazy" decoding="async"></div></section>
+
+  <p class="intro">首款萌世代官方正版，经典露娜IP回归：自由转职、社交满格，情侣配对与家族玩法原汁原味。12 月 10 日公测——开服前把魔附、摆摊、挂机与转职加点先看明白，上线直接照着做。</p>
+
+  <section class="facts"><div class="fact"><span class="fk">平台</span><span class="fv">PC 端游</span></div><div class="fact"><span class="fk">公测</span><span class="fv">2026.12.10（以官方公告为准）</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">自由转职 · 社交满格</span></div><div class="fact"><span class="fk">IP 背景</span><span class="fv">经典露娜正统续作</span></div></section>
+
+
+  <section class="list">
+    <h2>露娜2：拾光之约 · 全部 10 篇<small>点开任意一篇直接展开全文</small></h2>
+    <div class="entries">
+<a class="entry" href="../../index.html?a=9ur0bb">
+      <span class="e-date"><i>11.20</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-20</span></span>
+        <span class="e-title">20 级二转：守卫还是斗士，别按名字选</span>
+        <span class="e-dek">守卫、斗士、旅者、流氓、修士、巫师六个二转职业一次看清：二转选哪条不影响 40 级三转，只影响这 20 级打得舒不舒服——外加一个老版 LUNA 的接任务坑。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=ikbut8">
+      <span class="e-date"><i>11.20</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-20</span></span>
+        <span class="e-title">《露娜 2：拾光之约》背包满了别乱扔，先分解再强化</span>
+        <span class="e-dek">强化抬数值、魔附补短板、分解攒魔灵石——三条线各管各的，创角初期就能用；转职任务的指定武器千万别当装备分掉。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1l05pp0">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-18</span></span>
+        <span class="e-title">开服别乱跑：蓝色大陆的地图顺序，任务早就替你排好了</span>
+        <span class="e-dek">阿克勒港口→平原→地精前哨→黑暗森林→红魔鬼前哨→狂风之谷，六站一张图说清：药备足，任务别跳，组队别怕喊人。</span>
+        <span class="e-foot">约 2 分钟 · 8 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=fgb2ii">
+      <span class="e-date"><i>11.17</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-17</span></span>
+        <span class="e-title">《露娜 2：拾光之约》40 级只有一次转职机会，九条路你挑哪条</span>
+        <span class="e-dek">三转任务只能选一条路线完成，转职结果不可更改。九个三转职业逐一拆解：人类能走八条，精灵只有六条——先定种族，等于先砍掉一批选项。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1nfjbdz">
+      <span class="e-date"><i>11.16</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-16</span></span>
+        <span class="e-title">《露娜 2：拾光之约》新手开荒攻略</span>
+        <span class="e-dek">人类、精灵两个种族，战士、魔法师、刺客三个职业。20 级二转、40 级三转；三转不可更改；背包满了先分解；药不够，别出港口——开荒前六问，一次说清。</span>
+        <span class="e-foot">约 1 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1ixxg8i">
+      <span class="e-date"><i>11.15</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-15</span></span>
+        <span class="e-title">招募：找几个愿意在蓝色大陆待一整晚的人</span>
+        <span class="e-dek">不冲榜、不打卡，每周两三个晚上九点以后组队。缺一个能开麦不抢话的人、一个愿意等队友重连的人，还有一个纯新人。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=15mhmlp">
+      <span class="e-date"><i>11.13</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-13</span></span>
+        <span class="e-title">那天晚上十二点，我还站在阿克勒港口</span>
+        <span class="e-dek">开服日的第一天：打史莱姆、钓一条鱼、收半块地的菜、副本打两趟、认识三个陌生人。12 月 10 日，蓝色大陆见。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1tdraei">
+      <span class="e-date"><i>11.12</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-12</span></span>
+        <span class="e-title">12 月 10 日进蓝色大陆前，先把这四笔账算清楚</span>
+        <span class="e-dek">时间账、选择账、情怀账、队友账——四笔算完再决定要不要回去。想找回一整块的晚上，就值得。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=gbj5v3">
+      <span class="e-date"><i>11.10</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-10</span></span>
+        <span class="e-title">以为再也找不回来的东西，12 月 10 日原样还给你</span>
+        <span class="e-dek">蓝色大陆真的又开了：老地方一处没少，老玩法一条没丢，自由转职、40 级三转都在。12 月 10 日公测，这次不用再说&quot;你们先打&quot;。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=tuppnk">
+      <span class="e-date"><i>11.10</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">露娜2</span><span>2026-11-10</span></span>
+        <span class="e-title">最近有人在悄悄清电脑硬盘，原因和《露娜 2：拾光之约》有关</span>
+        <span class="e-dek">十年没说话的公会群突然活了：有人问&quot;你当年哪个服&quot;，有人翻旧硬盘找截图，有人开始腾地方装游戏——答案在 12 月 10 日。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="cta-btn" href="../../">← 回首页看全部游戏与攻略</a>
+    <p>客服一对一发下载链接与专属礼包 · 本页已被逛过 <b id="subHits" hidden>—</b> 次</p>
+  </section>
+</main>
+<div class="bk" id="bkModal" hidden onclick="if(event.target===this)closeBooking()">
+  <div class="bk-card" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+    <button class="bk-x" type="button" onclick="closeBooking()" aria-label="关闭">×</button>
+    <p class="bk-eyebrow">PRE-REGISTER</p>
+    <h3 id="bkTitle">预约公测 · 领预约礼包</h3>
+    <p class="bk-desc">加客服微信，发送「拾光之约」即可领取礼包，开服当天还会收到上线提醒。</p>
+    <button class="bk-id" type="button" onclick="copyWx(this)"><span>LYLOVEZLL1314999</span><em class="bk-copy">点击复制</em></button>
+    <p class="bk-tip" id="bkTip">点一下上面的微信号即可复制，再到微信搜索添加</p>
+  </div>
+</div>
+<footer class="foot">
+  <a href="../../">精品手游攻略站</a> · <a href="../../stats.html">站点数据</a><br>
+  本页面为推广信息聚合，游戏内容版权归各开发商所有
+</footer>
+
+<script>
+/* 分站浏览计数：失败静默 */
+try{
+  fetch('https://abacus.jasoncameron.dev/hit/jingyu3269.github.io/g-luna2', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (d && typeof d.value === 'number'){
+        var el = document.getElementById('subHits');
+        if (el){ el.textContent = d.value; el.hidden = false; }
+      }
+    }).catch(function(){});
+}catch(e){}
+</script>
+<script>
+(function(){
+  var box = document.getElementById('cdBox');
+  if (!box) return;
+  var target = new Date('2026-12-10T00:00:00+08:00').getTime();
+  var D = document.getElementById('cdD'), H = document.getElementById('cdH'),
+      M = document.getElementById('cdM'), S = document.getElementById('cdS');
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var diff = target - Date.now();
+    if (diff <= 0){
+      box.innerHTML = '<p class="cd-open">公测已开启，进游戏见 🎉</p>';
+      return;
+    }
+    var t = Math.floor(diff / 1000);
+    D.textContent = Math.floor(t / 86400);
+    H.textContent = pad(Math.floor(t % 86400 / 3600));
+    M.textContent = pad(Math.floor(t % 3600 / 60));
+    S.textContent = pad(t % 60);
+    setTimeout(tick, 1000 - (Date.now() % 1000) + 10);
+  }
+  tick();
+})();
+
+function openBooking(){
+  var m = document.getElementById('bkModal');
+  if (!m) return;
+  m.hidden = false;
+  document.body.style.overflow = 'hidden';
+  var b = m.querySelector('.bk-x');
+  if (b) b.focus();
+}
+function closeBooking(){
+  var m = document.getElementById('bkModal');
+  if (!m) return;
+  m.hidden = true;
+  document.body.style.overflow = '';
+}
+function copyWx(btn){
+  var id = "LYLOVEZLL1314999";
+  var label = btn ? btn.querySelector('.bk-copy') : null;
+  function ok(){
+    var tip = document.getElementById('bkTip');
+    if (tip) tip.textContent = '已复制：' + id + ' · 打开微信搜索添加';
+    if (label) label.textContent = '已复制 ✓';
+    if (btn && btn.classList) btn.classList.add('done');
+  }
+  function fallback(){
+    var ta = document.createElement('textarea');
+    ta.value = id;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    ok();
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(id).then(ok).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeBooking();
+});
+</script>
+</body>
+</html>
