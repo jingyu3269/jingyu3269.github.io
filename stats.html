@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>站点数据 · 精品手游攻略站</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#2D3A2E;--ink2:#6B7A6C;--pink:#F0578E;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.6;
+  background:
+    radial-gradient(circle at 12% 0%,#FFE9F1 0%,transparent 46%),
+    radial-gradient(circle at 92% 6%,#E6F7F2 0%,transparent 42%),
+    var(--paper);
+  min-height:100vh;padding:0 16px 60px;
+}
+.wrap{max-width:880px;margin:0 auto}
+header{padding:30px 0 18px}
+.back{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;margin-bottom:16px;
+}
+.back:hover{color:var(--pink);border-color:#FFD3E2}
+h1{font-size:27px;letter-spacing:.5px}
+h1 span{color:var(--pink)}
+.sub{margin-top:6px;font-size:12.5px;color:var(--ink2)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 14px}
+.card{
+  background:#fff;border:2px solid var(--line);border-radius:18px;
+  padding:14px 14px 12px;box-shadow:0 6px 18px -10px rgba(80,50,30,.28);
+}
+.card .k{display:block;font-size:11.5px;color:var(--ink2);letter-spacing:.4px}
+.card .n{display:flex;align-items:baseline;gap:3px;margin-top:4px}
+.card b{font-size:26px;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.card em{font-style:normal;font-size:11.5px;color:var(--ink2)}
+.card:nth-child(1) b{color:#E0457B}
+.card:nth-child(2) b{color:#12A87A}
+.card:nth-child(3) b{color:#3A7DA1}
+.card:nth-child(4) b{color:#C98A16}
+.panel{
+  background:#fff;border:2px solid var(--line);border-radius:20px;
+  padding:18px 18px 20px;margin-bottom:14px;
+  box-shadow:0 8px 22px -16px rgba(80,50,30,.3);
+}
+.panel h2{font-size:15px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.panel h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.chart{display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:16px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bar .v{font-size:11.5px;font-weight:800;color:#B04A78;font-variant-numeric:tabular-nums}
+.bar .b{
+  width:100%;max-width:46px;border-radius:9px 9px 4px 4px;
+  background:linear-gradient(180deg,#FFA9C8,#F0578E);
+  transition:height .5s cubic-bezier(.2,.8,.3,1);
+}
+.bar.today .b{background:linear-gradient(180deg,#8FD9C4,#12A87A)}
+.bar .d{font-size:10.5px;color:var(--ink2);white-space:nowrap}
+.rank{list-style:none;margin-top:12px}
+.row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed #F2E7DA}
+.row:last-child{border-bottom:none}
+.no{flex:0 0 22px;text-align:center;font-size:11.5px;font-weight:900;color:#C6B4A6;font-variant-numeric:tabular-nums}
+.row:nth-child(1) .no{color:#E0457B}
+.row:nth-child(2) .no{color:#F09A2E}
+.row:nth-child(3) .no{color:#12A87A}
+.row .main{flex:1;min-width:0}
+.row .t{font-size:13.5px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .g{font-size:10.5px;color:#fff;border-radius:6px;padding:1px 6px;margin-right:6px;vertical-align:1px}
+.row .c{flex:0 0 auto;font-size:13px;font-weight:900;color:#B04A78;font-variant-numeric:tabular-nums}
+.row .track{height:5px;border-radius:3px;background:#F7EFE6;margin-top:5px;overflow:hidden}
+.row .fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#FFC2D9,#F0578E);transition:width .5s}
+.more{
+  display:block;width:100%;margin-top:14px;padding:10px;
+  border:2px dashed #FFD3E2;background:#FFF8FB;color:#C2467A;
+  border-radius:14px;font:inherit;font-size:12.5px;font-weight:800;cursor:pointer;
+}
+.more:hover{background:#FFF0F6}
+.refresh{
+  margin-left:auto;padding:3px 10px;border-radius:999px;cursor:pointer;
+  border:2px solid var(--line);background:#fff;color:var(--ink2);
+  font:inherit;font-size:11px;font-weight:700;
+}
+.refresh:hover{color:var(--pink);border-color:#FFD3E2}
+.tip{margin-top:8px;font-size:11px;color:#B7A597}
+.empty{padding:22px 0;text-align:center;color:#B7A597;font-size:12.5px}
+.foot{margin-top:18px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+@media (max-width:640px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card b{font-size:22px}
+  h1{font-size:23px}
+  .chart{height:126px;gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← 返回首页</a>
+    <h1>站点<span>数据</span></h1>
+    <p class="sub">来自 Abacus 公共计数接口 · 无 Cookie · 不采集个人隐私</p>
+  </header>
+
+  <section class="cards">
+    <div class="card"><span class="k">累计访问</span><span class="n"><b id="k-views">—</b><em>次</em></span></div>
+    <div class="card"><span class="k">独立访客</span><span class="n"><b id="k-visitors">—</b><em>位</em></span></div>
+    <div class="card"><span class="k">今日访问</span><span class="n"><b id="k-today">—</b><em>次</em></span></div>
+    <div class="card"><span class="k">昨日访问</span><span class="n"><b id="k-yest">—</b><em>次</em></span></div>
+  </section>
+
+  <section class="panel">
+    <h2>近 7 天访问 <small>按天累计，过了 0 点自动开新的一天</small></h2>
+    <div class="chart" id="chart"><div class="empty">读取中…</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>文章阅读排行 <small id="rankNote"></small><button class="refresh" id="refresh" type="button">重新读取</button></h2>
+    <ol class="rank" id="rank"><li class="empty">读取中…</li></ol>
+    <button class="more" id="more" hidden></button>
+  </section>
+
+  <p class="tip" id="tip">首次打开约 10~20 秒（接口限流），5 分钟内再打开直接走缓存</p>
+  <p class="foot">
+    最近刷新：<span id="ts">—</span><br>
+    「阅读」统计的是展开全文的次数，同一篇重复展开会重复计入
+  </p>
+</div>
+
+<script>
+var API = 'https://abacus.jasoncameron.dev';
+var NS  = 'jingyu3269.github.io';
+var ARTICLES = [{"id":"a-1ixxg8i","game":"露娜2：拾光之约","title":"招募：找几个愿意在蓝色大陆待一整晚的人"},{"id":"a-16a03c6","game":"英雄连城","title":"想玩点新鲜的？《英雄连城》这第六个职业值得试"},{"id":"a-15mhmlp","game":"露娜2：拾光之约","title":"那天晚上十二点，我还站在阿克勒港口"},{"id":"a-nx9tz","game":"英雄连城","title":"被怀旧服伤过的人，会怎么看《英雄连城》"},{"id":"a-1tdraei","game":"露娜2：拾光之约","title":"12 月 10 日进蓝色大陆前，先把这四笔账算清楚"},{"id":"a-nuaith","game":"英雄连城","title":"没时间、没预算、没队友，《英雄连城》给了三种解法"},{"id":"a-tm3stt","game":"英雄连城","title":"一分钱不充，《英雄连城》能玩到哪一步？"},{"id":"a-mz96rp","game":"英雄连城","title":"不逼肝、不逼氪，《英雄连城》把奇迹的老味道搬进了手机"},{"id":"a-gbj5v3","game":"露娜2：拾光之约","title":"以为再也找不回来的东西，12 月 10 日原样还给你"},{"id":"a-tuppnk","game":"露娜2：拾光之约","title":"最近有人在悄悄清电脑硬盘，原因和《露娜 2：拾光之约》有关"},{"id":"a-1abwcv8","game":"小小屠龙·冰雪复古","title":"蹲一晚 BOSS 空手而归？先分清三种场面"},{"id":"a-aaxf6q","game":"桃园将帅录","title":"推图顺、竞技场连输？两套换脑清单"},{"id":"a-f9yvk","game":"桃园将帅录","title":"新手开荒顺序：加点、将星、装备、阵法与前七天节奏"},{"id":"a-1dcvmr","game":"小小屠龙·冰雪复古","title":"开局避坑指南：时间、元宝、泡点三件事理清再上路"},{"id":"a-1t5u68i","game":"小小屠龙·冰雪复古","title":"卡级怎么破？先分清你卡的是哪一道门槛"},{"id":"a-2tyf96","game":"小小屠龙·冰雪复古","title":"魔血石+盟重回城石：一个管命，一个管时间"},{"id":"a-hifvbs","game":"小小屠龙·冰雪复古","title":"换装指南：先定标准，别把过渡装当毕业装养"},{"id":"a-cxapcn","game":"桃园将帅录","title":"打不动不一定是战力低：三个战场细节"},{"id":"a-ndql5q","game":"桃园将帅录","title":"开服公告：10月28日10点全服上线"},{"id":"a-1xmdle1","game":"桃园将帅录","title":"赛季沙盘大地图，联盟攻城完整流程"},{"id":"a-ogu1hd","game":"桃园将帅录","title":"日常任务玩法全梳理，每天不瞎忙"},{"id":"a-1bc66fs","game":"桃园将帅录","title":"ATB时序战斗详解：速度决定一切"},{"id":"a-1h99ohi","game":"小小屠龙·冰雪复古","title":"升级攻略：最快速度冲级转生"},{"id":"a-pat9oq","game":"小小屠龙·冰雪复古","title":"转生攻略：转生转不对打宝全白费"},{"id":"a-1iqon8f","game":"小小屠龙·冰雪复古","title":"新手开荒先学会\"省\"，零氪也能发育"},{"id":"a-1vmzq59","game":"小小屠龙·冰雪复古","title":"打金规则：装备不过商城，散人天堂"},{"id":"a-1ples8v","game":"精灵永恒","title":"新手入门避坑指南，少走弯路"},{"id":"a-xnxp7k","game":"精灵永恒","title":"前期升级全攻略：光速度过开荒期"},{"id":"a-e4ahl9","game":"精灵永恒","title":"战斗进阶：精灵切换+技能把控"},{"id":"a-1ga4n6m","game":"精灵永恒","title":"第二赛季圣物系统解锁，战力飞跃"},{"id":"a-i674cw","game":"精灵永恒","title":"精灵养成攻略：少走弯路，稳步提升"},{"id":"a-66f9df","game":"精灵永恒","title":"转职试炼通关攻略：不是拉高战力就能过"},{"id":"a-1iift60","game":"精灵永恒","title":"萌新入门：赛季玩法详解（上篇）"},{"id":"a-8ni93d","game":"精灵永恒","title":"日常周常怎么清最快，奖励还能拿满"},{"id":"a-pnenb","game":"精灵永恒","title":"八大职业怎么选，开荒选错真的会难受"},{"id":"a-1gjsg93","game":"精灵永恒","title":"0-30 级开荒路线：主线、悬赏、加点一次讲清"},{"id":"a-1347bay","game":"精灵永恒","title":"散人打宝与摆摊变现：哪些东西真能换钱"},{"id":"a-h93ozb","game":"精灵永恒","title":"遗忘之塔与副本：每天该刷哪几个"}];
+var COLORS = {"露娜2：拾光之约":"#3A7DA1","英雄连城":"#12A87A","小小屠龙·冰雪复古":"#C98A16","桃园将帅录":"#E0457B","精灵永恒":"#7B5BD6"};
+
+function pad(n){ return n < 10 ? '0' + n : '' + n; }
+function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+function dayKey(off){
+  var d = new Date(); d.setDate(d.getDate() - off);
+  return 'd-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate());
+}
+function dayLabel(off){
+  var d = new Date(); d.setDate(d.getDate() - off);
+  return (d.getMonth() + 1) + '/' + d.getDate();
+}
+
+/* ---- DOM ---- */
+var days = [6, 5, 4, 3, 2, 1, 0];
+var total = ARTICLES.length;
+var rankEl = document.getElementById('rank');
+var moreEl = document.getElementById('more');
+var noteEl = document.getElementById('rankNote');
+var rows = [], shown = 12, done = 0;
+
+function renderRank(){
+  if (!rows.length) return;
+  var sorted = rows.slice().sort(function(a, b){ return b.v - a.v; });
+  var max = Math.max.apply(null, sorted.map(function(x){ return x.v; }).concat([1]));
+  var n = Math.min(shown, sorted.length);
+  var html = '';
+  for (var i = 0; i < n; i++){
+    var r = sorted[i];
+    var pct = Math.round(r.v / max * 100);
+    html += '<li class="row">' +
+      '<span class="no">' + (i + 1) + '</span>' +
+      '<div class="main">' +
+        '<div class="t"><span class="g" style="background:' + (COLORS[r.game] || '#8A7A6E') + '">' + r.game + '</span>' + r.title + '</div>' +
+        '<div class="track"><div class="fill" style="width:' + pct + '%"></div></div>' +
+      '</div>' +
+      '<span class="c">' + fmt(r.v) + '</span>' +
+    '</li>';
+  }
+  rankEl.innerHTML = html;
+  moreEl.hidden = sorted.length <= shown;
+  moreEl.textContent = '显示全部 ' + sorted.length + ' 篇';
+  noteEl.textContent = done < total ? '已读取 ' + done + '/' + total + ' 篇' : '共 ' + total + ' 篇';
+}
+moreEl.addEventListener('click', function(){ shown = total; renderRank(); });
+
+function drawOverview(views, visitors, vals){
+  document.getElementById('k-views').textContent = fmt(views);
+  document.getElementById('k-visitors').textContent = fmt(visitors);
+  document.getElementById('k-today').textContent = fmt(vals[6] || 0);
+  document.getElementById('k-yest').textContent = fmt(vals[5] || 0);
+  var max = Math.max.apply(null, vals.concat([1]));
+  var html = '';
+  for (var i = 0; i < days.length; i++){
+    var v = vals[i] || 0, h = v ? Math.max(6, Math.round(v / max * 106)) : 3;
+    var bs = v ? 'height:' + h + 'px' : 'height:3px;opacity:.35';
+    html += '<div class="bar' + (days[i] === 0 ? ' today' : '') + '">' +
+              '<span class="v" style="' + (v ? '' : 'opacity:.45') + '">' + fmt(v) + '</span>' +
+              '<span class="b" style="' + bs + '"></span>' +
+              '<span class="d">' + (days[i] === 0 ? '今天' : dayLabel(days[i])) + '</span>' +
+            '</div>';
+  }
+  document.getElementById('chart').innerHTML = html;
+}
+
+/* ---- 接口限流：30 次 / 10 秒 / IP，这里约 3 次每秒，遇 429 退避重试 ---- */
+var GAP = 620, MAXRUN = 2, running = 0, lastStart = 0, holding = false;
+var queue = [];
+function pump(){
+  if (holding || running >= MAXRUN || !queue.length) return;
+  var wait = Math.max(0, lastStart + GAP - Date.now());
+  if (wait > 0){
+    holding = true;
+    setTimeout(function(){ holding = false; pump(); }, wait);
+    return;
+  }
+  running++; lastStart = Date.now();
+  var job = queue.shift();
+  job.done.then(function(){ running--; pump(); });
+  job.run();
+}
+function get(key){
+  return new Promise(function(resolve){
+    var job = { done: null, run: null };
+    job.done = new Promise(function(release){
+      var attempt = 0;
+      job.run = function(){
+        attempt++;
+        fetch(API + '/get/' + NS + '/' + encodeURIComponent(key), { cache: 'no-store' })
+          .then(function(r){
+            if (r.status === 429 && attempt < 3){ setTimeout(job.run, 3500); return; }
+            if (!r.ok){ resolve(0); release(); return; }
+            r.json().then(function(d){
+              resolve((d && typeof d.value === 'number') ? d.value : 0);
+              release();
+            }).catch(function(){ resolve(0); release(); });
+          })
+          .catch(function(){ resolve(0); release(); });
+      };
+    });
+    queue.push(job);
+    pump();
+  });
+}
+
+/* ---- 本地缓存：5 分钟内不重复请求 ---- */
+var CK = 'jy_stats_v1', TTL = 5 * 60 * 1000;
+function readCache(){
+  try{
+    var o = JSON.parse(localStorage.getItem(CK) || 'null');
+    if (o && o.t && Date.now() - o.t < TTL) return o.d;
+  }catch(e){}
+  return null;
+}
+function writeCache(d){
+  try{ localStorage.setItem(CK, JSON.stringify({ t: Date.now(), d: d })); }catch(e){}
+}
+
+document.getElementById('refresh').addEventListener('click', function(){
+  try{ localStorage.removeItem(CK); }catch(e){}
+  location.reload();
+});
+
+/* ---- 启动 ---- */
+var cached = readCache();
+if (cached){
+  drawOverview(cached.views || 0, cached.visitors || 0, cached.days || []);
+  rows = ARTICLES.map(function(a){
+    return { game: a.game, title: a.title, v: (cached.arts && cached.arts[a.id]) || 0 };
+  });
+  done = total;
+  renderRank();
+  document.getElementById('tip').textContent = '显示的是 5 分钟内的缓存，点「重新读取」拉最新';
+  document.getElementById('ts').textContent = new Date(cached.t).toLocaleString('zh-CN', { hour12: false });
+} else {
+  var store = { views: 0, visitors: 0, days: [], arts: {} };
+  Promise.all([get('views'), get('visitors')].concat(
+    days.map(function(d){ return get(dayKey(d)); })
+  )).then(function(res){
+    store.views = res[0];
+    store.visitors = res[1];
+    store.days = res.slice(2);
+    drawOverview(store.views, store.visitors, store.days);
+  });
+
+  ARTICLES.forEach(function(a){
+    get(a.id).then(function(v){
+      rows.push({ game: a.game, title: a.title, v: v });
+      store.arts[a.id] = v;
+      done++;
+      renderRank();
+      if (done === total){
+        writeCache(store);
+        document.getElementById('tip').textContent = '已是最新数据，5 分钟内再打开直接走缓存';
+      }
+    });
+  });
+  document.getElementById('ts').textContent = new Date().toLocaleString('zh-CN', { hour12: false });
+}
+</script>
+</body>
+</html>
