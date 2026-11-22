@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电脑玩手游 · 模拟器专区 | 精品手游攻略站</title>
+<meta name="description" content="手机上玩的手游想在电脑上玩？装雷电模拟器或 MuMu 模拟器，再装本站游戏：桃园·将帅录、小小屠龙-冰雪复古、传奇盛世移动版-3D点卡、武林外传：十年之约。">
+<link rel="canonical" href="https://jingyu3269.github.io/pc/">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:0 0 40px;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:#23282e;background:#FFF7FB;
+  background-image:
+    radial-gradient(760px 420px at 12% -6%,rgba(255,140,190,.20),transparent 62%),
+    radial-gradient(700px 400px at 96% 2%,rgba(120,170,255,.16),transparent 60%),
+    radial-gradient(620px 400px at 50% 108%,rgba(255,190,120,.14),transparent 64%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:940px;margin:0 auto;padding:0 16px}
+
+/* 顶部 */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  max-width:940px;margin:0 auto;padding:16px 16px 6px;
+}
+.nav-logo{font-size:16px;font-weight:900;letter-spacing:.4px}
+.nav-logo span{
+  background:linear-gradient(120deg,#FF2E85,#FF8A3D);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-back{
+  font-size:13px;font-weight:800;color:#fff;padding:8px 15px;border-radius:999px;
+  background:linear-gradient(180deg,#FF6FA8,#FF2E85);
+  box-shadow:0 4px 0 #C81A63,0 8px 16px rgba(255,46,133,.26);
+}
+
+/* 头图区 */
+.hero{padding:16px 0 4px;text-align:center}
+.hero-badge{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:.6px;color:#E0126B;
+  background:rgba(255,46,133,.09);border:1.5px solid rgba(255,46,133,.28);
+  padding:5px 13px;border-radius:999px;
+}
+.hero h1{
+  margin:13px 0 8px;font-size:31px;line-height:1.25;letter-spacing:.5px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg,#FF2E85 10%,#FF7A3D 90%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{margin:0 auto;max-width:620px;font-size:14px;line-height:1.75;color:#6b7480}
+
+/* 模拟器切换 */
+.emu-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 0}
+.emu-tab{
+  display:flex;align-items:center;gap:11px;padding:13px 14px;border-radius:16px;cursor:pointer;
+  background:#fff;border:1.5px solid rgba(255,120,170,.20);text-align:left;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+  font-family:inherit;
+}
+.emu-tab:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,46,133,.14)}
+.emu-tab.on{border-color:#FF2E85;box-shadow:0 10px 24px rgba(255,46,133,.20);background:linear-gradient(180deg,#fff,#FFF3F8)}
+.emu-tab img{width:46px;height:46px;border-radius:12px;object-fit:cover;flex:0 0 auto;box-shadow:0 4px 10px rgba(0,0,0,.16)}
+.emu-tab .t{display:block;font-size:15px;font-weight:900;line-height:1.3}
+.emu-tab .s{display:block;font-size:11.5px;color:#8b939c;font-weight:700;margin-top:2px}
+.emu-tab .dot{
+  margin-left:auto;flex:0 0 auto;width:9px;height:9px;border-radius:50%;
+  background:#E7EAF0;transition:background .18s,box-shadow .18s;
+}
+.emu-tab.on .dot{background:#FF2E85;box-shadow:0 0 0 4px rgba(255,46,133,.16)}
+
+/* 面板：步骤 + 下载按钮 */
+.emu-panel{
+  margin-top:12px;background:#fff;border-radius:18px;padding:16px 16px 17px;
+  border:1.5px solid rgba(255,120,170,.18);box-shadow:0 10px 26px rgba(45,58,46,.07);
+}
+.emu-panel-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.emu-dl{
+  display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:999px;
+  background:linear-gradient(180deg,#FF6FA8,#FF2E85);color:#fff;font-size:14px;font-weight:900;letter-spacing:.4px;
+  box-shadow:0 4px 0 #C81A63,0 8px 18px rgba(255,46,133,.28);
+}
+.emu-dl:active{transform:translateY(1px)}
+.emu-note{font-size:12.5px;color:#8b939c;line-height:1.6}
+.steps{display:grid;gap:9px;margin:0;padding:0;list-style:none}
+.steps li{
+  display:flex;gap:9px;font-size:13.5px;line-height:1.65;color:#3d454d;
+  background:#FFF8FB;border:1px solid rgba(255,120,170,.16);border-radius:12px;padding:9px 12px;
+}
+.steps b{color:#E0126B}
+.steps .n{
+  flex:0 0 auto;width:20px;height:20px;border-radius:50%;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:900;color:#fff;background:linear-gradient(135deg,#FF7FB8,#FF2E85);
+}
+
+/* 游戏区 */
+.games{margin-top:26px}
+.games h2{
+  margin:0 0 6px;font-size:20px;font-weight:900;letter-spacing:.3px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.games h2 small{font-size:12.5px;font-weight:700;color:#98a0a8;letter-spacing:0}
+.games>p{margin:0 0 14px;font-size:13px;color:#78828c;line-height:1.7}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:13px}
+.g-card{
+  background:#fff;border-radius:16px;padding:14px;border:1.5px solid rgba(255,120,170,.18);
+  box-shadow:0 8px 20px rgba(45,58,46,.06);
+  display:flex;flex-direction:column;gap:10px;
+}
+.g-top{display:flex;align-items:center;gap:11px}
+.g-top img{width:52px;height:52px;border-radius:13px;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,.16)}
+.g-name{font-size:15px;font-weight:900;line-height:1.3}
+.g-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.g-tags span{font-size:10.5px;font-weight:800;color:#8b5a12;background:#FFF4DC;border-radius:999px;padding:2px 8px}
+.g-tags span.pink{color:#C81A63;background:#FFEFF5}
+.g-tags span.blue{color:#1E4FB8;background:#EAF2FF}
+.g-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.g-btn{
+  flex:1 1 118px;text-align:center;padding:9px 10px;border-radius:999px;
+  font-size:13px;font-weight:900;letter-spacing:.3px;color:#fff;
+  background:linear-gradient(180deg,#FF6FA8,#FF2E85);box-shadow:0 3px 0 #C81A63;
+}
+.g-btn.blue{background:linear-gradient(180deg,#5B9BFF,#2E6BE6);box-shadow:0 3px 0 #1E4FB8}
+.g-btn.ghost{
+  color:#5b636c;background:#F4F6F9;box-shadow:0 3px 0 #E2E6EC;font-weight:800;
+}
+.g-note{font-size:11.5px;color:#98a0a8;line-height:1.6}
+
+/* 底部提示 */
+.tipbox{
+  margin-top:24px;background:linear-gradient(180deg,#FFFDF6,#FFF7E8);
+  border:1.5px dashed rgba(200,138,22,.35);border-radius:16px;padding:14px 16px;
+  font-size:13px;line-height:1.8;color:#6a5a33;
+}
+.tipbox b{color:#B06A00}
+.foot{margin-top:26px;text-align:center;font-size:12px;color:#9aa2ab;line-height:1.9}
+.foot a{color:#E0126B;font-weight:800}
+
+@media (max-width:560px){
+  .hero h1{font-size:25px}
+  .emu-tabs{grid-template-columns:1fr}
+  .emu-tab img{width:40px;height:40px}
+  .g-grid{grid-template-columns:1fr}
+  .emu-dl{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .emu-tab{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-logo">精品手游<span>攻略站</span></div>
+  <a class="nav-back" href="../">← 返回首页</a>
+</div>
+
+<header class="hero wrap">
+  <div class="hero-badge">🖥️ 电脑玩手游 · 官方渠道</div>
+  <h1>模拟器<em>专区</em></h1>
+  <p>下面是本站游戏的电脑玩法：先装一款安卓模拟器，再回到本页下载游戏安装包。两款模拟器任选一款即可，装完能玩的游戏完全一样，都是本站这几款。</p>
+</header>
+
+<div class="wrap">
+
+  <div class="emu-tabs">
+    <button class="emu-tab on" data-emu="ld" type="button">
+      <img src="../assets/dl-ld.webp" alt="雷电模拟器" width="46" height="46" loading="eager">
+      <span>
+        <span class="t">雷电模拟器</span>
+        <span class="s">Windows · 免费 · 多开稳定</span>
+      </span>
+      <i class="dot"></i>
+    </button>
+    <button class="emu-tab" data-emu="mumu" type="button">
+      <img src="../assets/dl-mumu.webp" alt="MuMu模拟器" width="46" height="46" loading="eager">
+      <span>
+        <span class="t">MuMu模拟器</span>
+        <span class="s">网易出品 · Windows / macOS</span>
+      </span>
+      <i class="dot"></i>
+    </button>
+  </div>
+
+  <div class="emu-panel">
+    <div class="emu-panel-top">
+      <a class="emu-dl" id="emuDl" href="https://www.ldmnq.com/" target="_blank" rel="noopener">⬇ 下载雷电模拟器电脑版</a>
+      <span class="emu-note" id="emuNote">进官网点「立即下载」，装完打开就是一个安卓桌面</span>
+    </div>
+    <ol class="steps" id="emuSteps">
+      <li><span class="n">1</span><span>装好 <b>雷电模拟器</b>，打开后进入安卓桌面（第一次启动会慢一点，等它初始化完）。</span></li>
+      <li><span class="n">2</span><span>在模拟器里打开自带浏览器，访问 <b>jingyu3269.github.io</b>，或直接在电脑浏览器下载安装包后拖进模拟器窗口。</span></li>
+      <li><span class="n">3</span><span>从下面「本站游戏」里点 <b>安卓下载</b>，安装包会自动装到模拟器里；装完在桌面就能看到游戏图标。</span></li>
+    </ol>
+  </div>
+
+  <section class="games">
+    <h2>本站游戏 <small>装好模拟器后，从下面选游戏</small></h2>
+    <p>这里的每一款都是本站收录的游戏，下载链接也是本站一直在用的官方渠道，不会跳到别的游戏。</p>
+
+    <div class="g-grid">
+
+      <div class="g-card">
+        <div class="g-top">
+          <img src="../assets/dl-taoyuan-v3.webp" alt="桃园·将帅录" width="52" height="52" loading="lazy">
+          <div>
+            <div class="g-name">桃园·将帅录</div>
+            <div class="g-tags"><span>Q版3D</span><span class="pink">回合制</span></div>
+          </div>
+        </div>
+        <div class="g-note">三端互通，模拟器上用手柄或键鼠都能玩，云端账号和手机同步。</div>
+        <div class="g-btns">
+          <a class="g-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7736&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a>
+          <a class="g-btn ghost" href="../g/taoyuan/">📖 7 篇攻略</a>
+        </div>
+      </div>
+
+      <div class="g-card">
+        <div class="g-top">
+          <img src="../assets/dl-tulong.webp" alt="小小屠龙-冰雪复古" width="52" height="52" loading="lazy">
+          <div>
+            <div class="g-name">小小屠龙-冰雪复古</div>
+            <div class="g-tags"><span>打金</span><span class="pink">复古传奇</span></div>
+          </div>
+        </div>
+        <div class="g-note">挂机打金最适合电脑玩：模拟器多开几个，白天挂机晚上收元宝。</div>
+        <div class="g-btns">
+          <a class="g-btn" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" target="_blank" rel="noopener">⬇ 安卓下载</a>
+          <a class="g-btn ghost" href="../g/xxtl/">📖 9 篇攻略</a>
+        </div>
+      </div>
+
+      <div class="g-card">
+        <div class="g-top">
+          <img src="../assets/dl-cssj.webp" alt="传奇盛世移动版-3D点卡" width="52" height="52" loading="lazy">
+          <div>
+            <div class="g-name">传奇盛世移动版-3D点卡</div>
+            <div class="g-tags"><span>3D</span><span class="pink">点卡计时</span></div>
+          </div>
+        </div>
+        <div class="g-note">点卡按在线时长算，电脑上玩视野更大，攻沙时开多开也好用。</div>
+        <div class="g-btns">
+          <a class="g-btn" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" target="_blank" rel="noopener">⬇ 安卓下载</a>
+          <a class="g-btn ghost" href="../g/cq3d/">📖 6 篇攻略</a>
+        </div>
+      </div>
+
+      <div class="g-card">
+        <div class="g-top">
+          <img src="../assets/dl-wulin.webp" alt="武林外传：十年之约" width="52" height="52" loading="lazy">
+          <div>
+            <div class="g-name">武林外传：十年之约</div>
+            <div class="g-tags"><span>怀旧</span><span class="pink">MMO</span></div>
+          </div>
+        </div>
+        <div class="g-note">练级跑图时间长，电脑挂机不烫手；双端账号互通，手机接着玩也行。</div>
+        <div class="g-btns">
+          <a class="g-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7669&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a>
+          <a class="g-btn ghost" href="../#articles">📖 5 篇攻略</a>
+        </div>
+      </div>
+
+      <div class="g-card">
+        <div class="g-top">
+          <img src="../assets/icon-luna.webp" alt="露娜2：拾光之约" width="52" height="52" loading="lazy">
+          <div>
+            <div class="g-name">露娜2：拾光之约</div>
+            <div class="g-tags"><span>PC端游</span><span class="blue">12.10 公测</span></div>
+          </div>
+        </div>
+        <div class="g-note">这款本身就是电脑端游，不用模拟器，下载客户端直接装。</div>
+        <div class="g-btns">
+          <a class="g-btn blue" href="../g/luna2/" target="_blank" rel="noopener">🌙 看公测页</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="tipbox">
+    <b>小提示：</b>模拟器装好后，如果游戏提示「不兼容」或闪退，先在模拟器设置里把安卓版本调到 9 或更高、内存给到 4G 以上再试；打金类游戏建议关掉模拟器的省电模式，避免后台被杀。<br>
+    需要帮装或要专属礼包，回<a href="../" style="color:#B06A00;font-weight:800">首页</a>点「复制客服微信」，把游戏名发过去就行。
+  </div>
+
+  <div class="foot">
+    精品手游攻略站 · 模拟器专区<br>
+    <a href="../">返回首页</a> · <a href="../g/taoyuan/">桃园·将帅录</a> · <a href="../g/xxtl/">小小屠龙</a> · <a href="../g/cq3d/">传奇盛世</a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var EMU = {
+    ld: {
+      name: '雷电模拟器',
+      url: 'https://www.ldmnq.com/',
+      btn: '⬇ 下载雷电模拟器电脑版',
+      note: '进官网点「立即下载」，装完打开就是一个安卓桌面',
+      steps: [
+        '装好 <b>雷电模拟器</b>，打开后进入安卓桌面（第一次启动会慢一点，等它初始化完）。',
+        '在模拟器里打开自带浏览器，访问 <b>jingyu3269.github.io</b>，或直接在电脑浏览器下载安装包后拖进模拟器窗口。',
+        '从下面「本站游戏」里点 <b>安卓下载</b>，安装包会自动装到模拟器里；装完在桌面就能看到游戏图标。'
+      ]
+    },
+    mumu: {
+      name: 'MuMu模拟器',
+      url: 'https://mumu.163.com/',
+      btn: '⬇ 下载 MuMu 模拟器电脑版',
+      note: '网易官网，Windows 和 macOS 都能下，苹果电脑也能装',
+      steps: [
+        '装好 <b>MuMu 模拟器</b>，打开后进安卓桌面；第一次启动会初始化系统，等它跑完。',
+        '在模拟器里打开浏览器访问 <b>jingyu3269.github.io</b>，或者把电脑上下好的安装包直接拖进模拟器窗口。',
+        '从下面「本站游戏」里点 <b>安卓下载</b>，装完在模拟器桌面就能看到游戏图标，登录后和手机同一个账号。'
+      ]
+    }
+  };
+
+  var tabs = document.querySelectorAll('.emu-tab');
+  var dl = document.getElementById('emuDl');
+  var note = document.getElementById('emuNote');
+  var list = document.getElementById('emuSteps');
+  if(!tabs.length || !dl || !list) return;
+
+  function pick(key){
+    var d = EMU[key];
+    if(!d) return;
+    for(var i = 0; i < tabs.length; i++){
+      tabs[i].classList.toggle('on', tabs[i].getAttribute('data-emu') === key);
+    }
+    dl.setAttribute('href', d.url);
+    dl.textContent = d.btn;
+    note.textContent = d.note;
+    var html = '';
+    for(var j = 0; j < d.steps.length; j++){
+      html += '<li><span class="n">' + (j + 1) + '</span><span>' + d.steps[j] + '</span></li>';
+    }
+    list.innerHTML = html;
+  }
+
+  for(var i = 0; i < tabs.length; i++){
+    tabs[i].addEventListener('click', function(){
+      pick(this.getAttribute('data-emu'));
+    });
+  }
+})();
+</script>
+</body>
+</html>
