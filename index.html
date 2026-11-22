@@ -2685,8 +2685,9 @@ html.poster-open,html.poster-open body{overflow:hidden}
 }
 .dz-tip{font-size:12.5px;color:#8b9199}
 .dz-tip b{color:#FF2E85;font-weight:800}
-.dz-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,240px));gap:14px;justify-content:center}
+.dz-list{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 .dz-item{
+  flex:0 1 196px;max-width:200px;min-width:0;
   display:flex;flex-direction:column;align-items:center;gap:9px;
   padding:12px 10px 11px;border-radius:16px;text-decoration:none;
   background:linear-gradient(180deg,#FFFFFF,#FFF7FB);
@@ -2709,7 +2710,9 @@ html.poster-open,html.poster-open body{overflow:hidden}
   font-size:13px;font-weight:900;letter-spacing:.5px;color:#E0126B;
 }
 .dz-divider .dz-dv-t small{font-size:11.5px;font-weight:700;color:#98a0a8;letter-spacing:0}
-.dz-list-sim{grid-template-columns:repeat(auto-fill,minmax(196px,240px))}
+.dz-list-sim{justify-content:center}
+.dz-item.dz-sim{height:100%}
+.dz-item.dz-sim .dz-name{overflow-wrap:anywhere}
 .dz-item.dz-sim{background:linear-gradient(180deg,#FFFFFF,#F4F8FF);border-color:rgba(74,140,255,.24)}
 .dz-item.dz-sim:hover{box-shadow:0 12px 26px rgba(56,120,240,.20)}
 .dz-item.dz-sim .dz-cta{background:linear-gradient(180deg,#5B9BFF,#2E6BE6);box-shadow:0 4px 0 #1E4FB8,0 8px 16px rgba(46,107,230,.30)}
@@ -2721,7 +2724,8 @@ html.poster-open,html.poster-open body{overflow:hidden}
   box-shadow:0 4px 0 #C81A63,0 8px 16px rgba(255,46,133,.30);transition:transform .15s;
   text-decoration:none;cursor:pointer;
 }
-.dz-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.dz-btns{display:flex;gap:7px;flex-wrap:nowrap;justify-content:center}
+.dz-btns .dz-cta{flex:1 1 0;justify-content:center;padding:6px 8px;font-size:12px;white-space:nowrap;letter-spacing:0}
 /* 手机端下载指引：箭头提示 + 点击高亮按钮 */
 .dz-guide{display:none}
 @media (max-width:768px){
@@ -2758,7 +2762,12 @@ html.poster-open,html.poster-open body{overflow:hidden}
 .dlzone:hover::after{animation-duration:2s}
 @media (max-width:520px){
   .dlzone{padding:13px 13px 15px}
-  .dz-list{grid-template-columns:1fr 1fr;gap:10px}
+  .dz-list{gap:10px}
+  .dz-item{flex:1 1 calc(50% - 10px);max-width:none;min-width:0}
+  .dz-btns .dz-cta{font-size:11.5px;padding:6px 6px;gap:2px}
+  .dz-divider .dz-dv-t{white-space:normal;flex-wrap:wrap;justify-content:center;text-align:center;line-height:1.5}
+  .dz-item.dz-sim .dz-name{font-size:13px}
+  .dz-item.dz-sim .dz-cta{padding:7px 12px;font-size:12.5px;white-space:nowrap}
   .dz-icon{width:60px;height:60px;border-radius:14px}
 }
 @media (prefers-reduced-motion:reduce){
