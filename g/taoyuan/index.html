@@ -116,6 +116,31 @@ body{
 .foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
 .foot a:hover{color:var(--ac)}
 
+.gal{margin:2px 0 24px}
+.gal-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.gal-h h2{font-size:16px;font-weight:900;letter-spacing:.3px}
+.gal-h span{font-size:11.5px;color:var(--ink2)}
+.gal-hero,.gal-cell{
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  overflow:hidden;box-shadow:0 10px 24px -16px rgba(80,50,30,.4);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.gal-hero:hover,.gal-cell:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 24px -12px var(--ac)}
+.gal-hero>a,.gal-cell>a{display:block;text-decoration:none}
+.gal-hero img,.gal-cell img{width:100%;height:auto;display:block;background:#F3EADF}
+.gal-hero figcaption,.gal-cell figcaption{
+  padding:9px 12px 10px;font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.2px;
+}
+.gal-hero figcaption b{color:var(--ac);margin-right:6px}
+.gal-hero figcaption small{display:block;font-size:10.5px;font-weight:400;color:var(--ink2);margin-top:2px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+/* 单数张时最后一张占满整行，避免半行空着 */
+.gal-grid .gal-cell:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:560px){
+  .gal-grid{grid-template-columns:1fr}
+  .gal-hero figcaption,.gal-cell figcaption{font-size:11.5px;padding:8px 10px 9px}
+}
+
 /* ===== 游戏下载专区（分站） ===== */
 .dlz{
   margin:2px 0 24px;padding:16px 15px 17px;border-radius:20px;
@@ -326,7 +351,41 @@ body{
   <p class="intro">幻想三国ATB半即时回合制：云职业转职、将星收集、三端互通。胜负更多取决于阵容结构与站位，而不是单纯数值堆砌；赛季沙盘大地图上，联盟攻城占都城定天下。</p>
 
   <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">Q版三国 · 回合策略</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS / PC 三端互通</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">云职业转职 · 将星收集</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">赛季沙盘 · 联盟攻城</span></div></section>
-
+<section class="gal">
+    <div class="gal-h"><h2>游戏实机画面</h2><span>官方素材 · 点图片看大图</span></div>
+    <figure class="gal-hero">
+      <a href="../../assets/taoyuan-shot-1.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-1.webp" alt="桃园·将帅录 官方主视觉：刘关张桃园聚义" loading="lazy" decoding="async">
+      </a>
+      <figcaption><b>▲</b>桃园三兄弟 · 官方主视觉<small>官方素材 · 点击图片可看原始大图</small></figcaption>
+    </figure>
+    <div class="gal-grid"><figure class="gal-cell">
+      <a href="../../assets/taoyuan-shot-2.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-2.webp" alt="桃园·将帅录 角色属性与装备面板实拍" loading="lazy" decoding="async">
+      </a>
+      <figcaption>三国将帅逐梦</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/taoyuan-shot-3.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-3.webp" alt="桃园·将帅录 战斗与重铸实拍" loading="lazy" decoding="async">
+      </a>
+      <figcaption>匠心重铸续缘</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/taoyuan-shot-4.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-4.webp" alt="桃园·将帅录 将星卡牌收集界面实拍" loading="lazy" decoding="async">
+      </a>
+      <figcaption>妙计指点江山</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/taoyuan-shot-5.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-5.webp" alt="桃园·将帅录 关卡挑战列表实拍" loading="lazy" decoding="async">
+      </a>
+      <figcaption>沙场兄弟并肩</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/taoyuan-shot-6.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/taoyuan-shot-6.webp" alt="桃园·将帅录 主城场景实拍" loading="lazy" decoding="async">
+      </a>
+      <figcaption>初心未改如故</figcaption>
+    </figure></div>
+  </section>
 
   <section class="dlz" aria-labelledby="dlzT">
     <div class="dlz-head">
