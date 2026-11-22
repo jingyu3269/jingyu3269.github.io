@@ -116,6 +116,80 @@ body{
 .foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
 .foot a:hover{color:var(--ac)}
 
+/* ===== 游戏下载专区（分站） ===== */
+.dlz{
+  margin:2px 0 24px;padding:16px 15px 17px;border-radius:20px;
+  background:#fff;border:2px solid var(--line);position:relative;
+  box-shadow:0 12px 26px -16px rgba(80,50,30,.42);
+}
+.dlz-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.dlz-t{font-size:15.5px;font-weight:900;letter-spacing:.3px;color:var(--ink)}
+.dlz-t i{font-style:normal;margin-right:5px;color:var(--ac)}
+.dlz-tip{font-size:11.5px;color:var(--ink2)}
+.dlz-tip b{color:var(--ac);font-weight:800}
+.dlz-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.dlz-item{
+  flex:0 1 158px;max-width:168px;min-width:0;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:11px 8px 10px;border-radius:15px;
+  background:linear-gradient(180deg,#fff,#FFF8F3);
+  border:1.5px solid var(--line);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.dlz-item:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 20px -12px var(--ac)}
+.dlz-item.cur{background:var(--ac-soft);border-color:var(--ac)}
+.dlz-ic{width:62px;height:62px;border-radius:14px;overflow:hidden;background:#101820;box-shadow:0 5px 12px rgba(0,0,0,.22)}
+.dlz-ic img{width:100%;height:100%;object-fit:cover;display:block}
+.dlz-nm{font-size:12.5px;font-weight:800;text-align:center;line-height:1.3;color:var(--ink)}
+.dlz-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:3px;
+  max-width:100%;padding:6px 13px;border-radius:999px;text-decoration:none;
+  background:linear-gradient(180deg,var(--ac),var(--ac));color:#fff;
+  font-size:12px;font-weight:900;letter-spacing:.2px;line-height:1.2;
+  box-shadow:0 3px 0 rgba(0,0,0,.20),0 6px 14px -4px var(--ac);
+  transition:transform .15s;
+}
+.dlz-item:hover .dlz-cta{transform:translateY(-1px)}
+.dlz-btns{display:flex;gap:5px;flex-wrap:nowrap;justify-content:center;width:100%}
+.dlz-btns .dlz-cta{flex:1 1 0;min-width:0;padding:6px 6px;font-size:11.5px;white-space:nowrap;letter-spacing:0}
+.dlz-dv{display:flex;align-items:center;gap:9px;margin:15px 0 11px}
+.dlz-dv::before,.dlz-dv::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.12),transparent)}
+.dlz-dv span{font-size:12px;font-weight:900;letter-spacing:.3px;color:#4A7FE0;white-space:nowrap}
+.dlz-dv small{font-size:10.5px;font-weight:700;color:#9AA3AE;letter-spacing:0;font-weight:400}
+.dlz-item.dlz-sim{background:linear-gradient(180deg,#fff,#F3F8FF);border-color:rgba(74,140,255,.3)}
+.dlz-item.dlz-sim:hover{border-color:#4A8CFF;box-shadow:0 10px 20px -12px #4A8CFF}
+.dlz-item.dlz-sim .dlz-cta{background:linear-gradient(180deg,#5B9BFF,#2E6BE6);box-shadow:0 3px 0 #1E4FB8,0 6px 14px -4px #2E6BE6}
+.dlz-guide{display:none}
+@media (max-width:768px){
+  .dlz-guide{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:10.5px;font-weight:800;letter-spacing:.2px;line-height:1.3;text-align:center;
+    color:var(--ac);background:var(--ac-soft);border:1.2px dashed currentColor;
+    border-radius:999px;padding:2px 8px;opacity:.85;
+  }
+}
+.dlz-item.pulse .dlz-cta{animation:dlzPulse .5s ease-in-out 3}
+@keyframes dlzPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+.dlz-toast{
+  position:fixed;left:50%;bottom:80px;transform:translate(-50%,12px);z-index:99;
+  background:rgba(30,20,14,.92);color:#fff;font-size:12.5px;font-weight:800;
+  padding:9px 15px;border-radius:999px;white-space:nowrap;
+  opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;
+}
+.dlz-toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:520px){
+  .dlz{padding:13px 12px 15px;border-radius:17px}
+  .dlz-list{gap:8px}
+  .dlz-item{flex:1 1 calc(50% - 8px);max-width:none;padding:10px 7px 9px}
+  .dlz-ic{width:56px;height:56px;border-radius:13px}
+  .dlz-nm{font-size:12px}
+  .dlz-btns .dlz-cta{font-size:11px;padding:6px 4px;gap:1px}
+}
+@media (prefers-reduced-motion:reduce){
+  .dlz-item,.dlz-cta{transition:none}
+  .dlz-item.pulse .dlz-cta{animation:none}
+}
+
 @media (max-width:560px){
   .hero-head h1{font-size:21px}
   .facts{grid-template-columns:1fr 1fr;gap:8px}
@@ -188,6 +262,54 @@ body{
 
   <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">3D 传奇 · 点卡版</span></div><div class="fact"><span class="fk">计费</span><span class="fv">点卡计时 · 时长购买</span></div><div class="fact"><span class="fk">平台</span><span class="fv">移动端</span></div><div class="fact"><span class="fk">下载</span><span class="fv">点击本站封面图直达</span></div></section>
 
+
+  <section class="dlz" aria-labelledby="dlzT">
+    <div class="dlz-head">
+      <div class="dlz-t" id="dlzT"><i>⬇</i>游戏官方下载专区</div>
+      <div class="dlz-tip">官方渠道 · <b>点按钮直接下载安装包</b></div>
+    </div>
+    <div class="dlz-list">
+      <div class="dlz-item" role="group" aria-label="小小屠龙-冰雪复古 下载安装包">
+        <span class="dlz-ic"><img src="../../assets/dl-tulong.webp" alt="小小屠龙-冰雪复古" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">小小屠龙-冰雪复古</span>
+        <span class="dlz-guide">👇 点这里直接下载</span>
+        <a class="dlz-cta" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" target="_blank" rel="noopener">点击立即下载</a>
+      </div>
+      <div class="dlz-item cur" role="group" aria-label="传奇盛世移动版-3D点卡 下载安装包">
+        <span class="dlz-ic"><img src="../../assets/dl-cssj.webp" alt="传奇盛世移动版-3D点卡" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">传奇盛世移动版-3D点卡</span>
+        <span class="dlz-guide">👇 点这里直接下载</span>
+        <a class="dlz-cta" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" target="_blank" rel="noopener">点击立即下载</a>
+      </div>
+      <div class="dlz-item" role="group" aria-label="桃园·将帅录 下载安装包">
+        <span class="dlz-ic"><img src="../../assets/dl-taoyuan-v3.webp" alt="桃园·将帅录" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">桃园·将帅录</span>
+        <span class="dlz-guide">👇 点下面的按钮下载</span>
+        <span class="dlz-btns"><a class="dlz-cta" href="https://sdkn-ldy.zhangyu39.com/?app_id=7736&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a><a class="dlz-cta" href="https://sdkn-ldy.zhangyu39.com/?app_id=7711&amp;promote_id=2038" target="_blank" rel="noopener"> 苹果下载</a></span>
+      </div>
+      <div class="dlz-item" role="group" aria-label="武林外传：十年之约 下载安装包">
+        <span class="dlz-ic"><img src="../../assets/dl-wulin.webp" alt="武林外传：十年之约" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">武林外传：十年之约</span>
+        <span class="dlz-guide">👇 点下面的按钮下载</span>
+        <span class="dlz-btns"><a class="dlz-cta" href="https://sdkn-ldy.zhangyu39.com/?app_id=7669&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a><a class="dlz-cta" href="https://sdkn-ldy.zhangyu39.com/?app_id=7672&amp;promote_id=2038" target="_blank" rel="noopener"> 苹果下载</a></span>
+      </div>
+    </div>
+    <div class="dlz-dv"><span>🖥️ 电脑玩手游 · 模拟器专区 <small>里面只有本站游戏</small></span></div>
+    <div class="dlz-list">
+      <a class="dlz-item dlz-sim" href="../../pc/" aria-label="进入模拟器专区：雷电模拟器 + 本站游戏">
+        <span class="dlz-ic"><img src="../../assets/dl-ld.webp" alt="雷电模拟器" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">雷电模拟器</span>
+        <span class="dlz-guide">👇 点这里看电脑玩法</span>
+        <span class="dlz-cta">🖥️ 进入模拟器专区</span>
+      </a>
+      <a class="dlz-item dlz-sim" href="../../pc/" aria-label="进入模拟器专区：MuMu模拟器 + 本站游戏">
+        <span class="dlz-ic"><img src="../../assets/dl-mumu.webp" alt="MuMu模拟器" width="62" height="62" loading="lazy" decoding="async"></span>
+        <span class="dlz-nm">MuMu模拟器</span>
+        <span class="dlz-guide">👇 点这里看电脑玩法</span>
+        <span class="dlz-cta">🖥️ 进入模拟器专区</span>
+      </a>
+    </div>
+  </section>
 
   <section class="list">
     <h2>传奇盛世移动版-3D点卡 · 全部 6 篇<small>点开任意一篇直接展开全文</small></h2>
@@ -280,5 +402,26 @@ try{
 }catch(e){}
 </script>
 
+<script>
+(function(){
+  var items = document.querySelectorAll('.dlz-item');
+  if (!items.length) return;
+  var toast = document.createElement('div');
+  toast.className = 'dlz-toast';
+  document.body.appendChild(toast);
+  var timer = 0;
+  Array.prototype.forEach.call(items, function(it){
+    it.addEventListener('click', function(e){
+      if (e.target.closest('a')) return;
+      it.classList.remove('pulse');
+      void it.offsetWidth;
+      it.classList.add('pulse');
+      toast.textContent = '👇 点下面的按钮下载安装包';
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+    });
+  });
+})();</script>
 </body>
 </html>
