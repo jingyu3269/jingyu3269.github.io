@@ -670,12 +670,16 @@ button{font-family:inherit;cursor:pointer;border:none}
   .gc-hover,.gc-hover .dz-cta,.gc-hover-ico,.game-cover img{transition:none}
   .game-card:hover .game-cover img{transform:none}
 }
-/* 卡片正文：精简版只留游戏名（封面图下方一行） */
+/* 卡片正文：精简版只留游戏名 + 进入分站入口（封面图下方） */
 .game-body{padding:11px 8px 6px;position:relative;z-index:1;text-align:center}
 .game-name{
   font-size:18px;font-weight:900;color:#fff;
   letter-spacing:.8px;margin:0;
   text-shadow:0 2px 0 rgba(0,0,0,.16);
+}
+.game-body .game-sub{
+  display:inline-flex;margin:9px auto 3px;padding:7px 14px;
+  font-size:12px;letter-spacing:.3px;
 }
 .game-tags{
   display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;
@@ -3213,7 +3217,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
   <div class="section-title">
     <div class="tag">热门推荐</div>
     <h2>精选手游库</h2>
-    <p>点击封面直接下载官方安装包，鼠标移到封面可看下载入口</p>
+    <p>点击封面直接下载官方安装包，点「进入分站」看完整攻略</p>
   </div>
   <div class="game-grid">
 
@@ -3227,6 +3231,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </a>
       <div class="game-body">
         <div class="game-name">桃园·将帅录</div>
+        <a class="game-sub" href="g/taoyuan/">📖 进入分站 · 7 篇攻略</a>
       </div>
     </div>
 
@@ -3239,6 +3244,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </a>
       <div class="game-body">
         <div class="game-name">小小屠龙·冰雪复古</div>
+        <a class="game-sub" href="g/xxtl/">📖 进入分站 · 9 篇攻略</a>
       </div>
     </div>
 
@@ -3250,6 +3256,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </div>
       <div class="game-body">
         <div class="game-name">精灵永恒</div>
+        <a class="game-sub" href="g/jingling/">📖 进入分站 · 12 篇攻略</a>
       </div>
     </div>
 
@@ -3262,6 +3269,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </div>
       <div class="game-body">
         <div class="game-name">露娜2：拾光之约</div>
+        <a class="game-sub" href="g/luna2/">📖 进入分站 · 5 篇攻略</a>
       </div>
     </div>
 
@@ -3274,6 +3282,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </a>
       <div class="game-body">
         <div class="game-name">传奇盛世移动版-3D点卡</div>
+        <a class="game-sub" href="g/cq3d/">📖 进入分站 · 6 篇攻略</a>
       </div>
     </div>
 
@@ -3298,6 +3307,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </div>
       <div class="game-body">
         <div class="game-name">英雄连城</div>
+        <a class="game-sub" href="g/liancheng/">📖 进入分站 · 5 篇攻略</a>
       </div>
     </div>
 
