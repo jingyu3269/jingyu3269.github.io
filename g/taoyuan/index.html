@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>桃园·将帅录攻略合集 · 精品手游攻略站</title>
+<meta name="description" content="桃园·将帅录攻略共 7 篇：Q版三国 · ATB回合策略。幻想三国ATB半即时回合制：云职业转职、将星收集、三端互通。胜负更多取决于阵容结构与站位，而不是单纯数值堆砌；赛季沙盘大…">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ac:#E0457B;--ac-soft:#FDECEA;--ink:#2D3A2E;--ink2:#6B7A6C;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.65;
+  background:
+    radial-gradient(circle at 10% 0%, #FDECEA 0%, transparent 42%),
+    radial-gradient(circle at 94% 4%, #FFF3E2 0%, transparent 40%),
+    var(--paper);
+  min-height:100vh;padding:0 14px 56px;
+}
+.wrap{max-width:760px;margin:0 auto}
+/* 顶栏 */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 2px;margin:0 -14px 14px;padding:10px 16px;
+  background:rgba(255,251,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+.back{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-weight:700;
+}
+.back:hover{color:var(--ac);border-color:var(--ac)}
+.brand{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand i{font-style:normal;color:var(--ac)}
+/* 头图：按原图比例展示，不裁切，避免切头 */
+.hero{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:#1B1526;
+  border:3px solid #fff;box-shadow:0 12px 26px -10px rgba(80,50,30,.35);
+}
+.hero img{width:100%;height:auto;display:block}
+.hero-head{padding:14px 4px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 10px;
+  font-size:11.5px;font-weight:800;border-radius:999px;
+  background:var(--ac-soft);color:var(--ac);
+  border:1.5px solid rgba(0,0,0,.04);
+}
+.chip.hot{background:#FF4444;color:#fff;border-color:#FF4444}
+.hero-head h1{font-size:25px;font-weight:900;letter-spacing:.5px;line-height:1.3}
+.tagline{font-size:12.5px;color:var(--ink2);margin-top:4px}
+/* 简介 & 信息卡 */
+.intro{
+  margin:16px 2px 14px;font-size:13.5px;color:var(--ink2);
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;
+}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+.fact{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 13px;
+  box-shadow:0 6px 16px -12px rgba(80,50,30,.3);
+}
+.fk{display:block;font-size:11px;color:var(--ink2);letter-spacing:.4px}
+.fv{font-size:13px;font-weight:800;color:var(--ac)}
+/* 文章列表 */
+.list h2{font-size:16px;display:flex;align-items:baseline;gap:8px}
+.list h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.entries{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.entry{
+  display:flex;align-items:stretch;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:13px 14px;text-decoration:none;color:var(--ink);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 22px -14px var(--ac)}
+.e-date{
+  flex:0 0 52px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--ac-soft);border-radius:12px;color:var(--ac);
+}
+.e-date i{font-style:normal;font-size:14.5px;font-weight:900;font-variant-numeric:tabular-nums}
+.e-date em{font-style:normal;font-size:10px;opacity:.75}
+.e-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.e-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--ink2)}
+.e-tag{
+  display:inline-flex;align-items:center;height:17px;padding:0 7px;
+  background:var(--ac);color:#fff;border-radius:6px;
+  font-size:10.5px;font-weight:800;line-height:1;
+}
+.e-title{font-size:14.5px;font-weight:800;line-height:1.45}
+.e-dek{
+  font-size:12px;color:var(--ink2);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.e-foot{font-size:10.5px;color:#B7A597;margin-top:2px}
+.e-arrow{
+  flex:0 0 auto;align-self:center;color:var(--ac);
+  font-weight:900;font-size:16px;opacity:.55;transition:transform .18s,opacity .18s;
+}
+.entry:hover .e-arrow{transform:translateX(3px);opacity:1}
+/* 底部 CTA & 页脚 */
+.cta{margin:26px 0 8px;text-align:center}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(160deg,var(--ac),var(--ac));
+  color:#fff;text-decoration:none;font-weight:900;font-size:14px;
+  padding:12px 26px;border-radius:999px;
+  box-shadow:0 8px 18px -6px var(--ac);
+}
+.cta-btn:hover{filter:brightness(1.06)}
+.cta p{margin-top:10px;font-size:11.5px;color:var(--ink2)}
+.foot{margin-top:22px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+.foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
+.foot a:hover{color:var(--ac)}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+}
+/* ========== 方框 · 流光边框（光带绕框旋转，与首页一致） ========== */
+@property --flA{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes flowBorder{to{--flA:360deg}}
+.back,.chip,.intro,.fact,.entry,.jv-card,.bk-card,.cta-btn{position:relative}
+.back::after,.intro::after,.fact::after,.entry::after,.jv-card::after{inset:-2px;padding:2.2px}
+.chip::after,.bk-id::after{inset:-1.5px;padding:1.7px}
+.cta-btn::after{inset:-2.4px;padding:2.6px}
+.bk-card::after{inset:0;padding:2.2px}
+.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.back:hover::after,.chip:hover::after,.entry:hover::after{animation-duration:2s}
+.hero,.jcard{
+  --flA:0deg;border-color:transparent;
+  background-image:linear-gradient(#1B1526,#1B1526),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.jcard{
+  background-image:linear-gradient(#fff,#fff),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.jcard,.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{animation:none}
+}
+/*JOBS-CSS-START*/
+/* 职业图鉴 */
+.jobs{margin:4px 0 22px}
+.jobs-head h2{font-size:16px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.jobs-head h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.jobs-head p{font-size:11.5px;color:var(--ink2);margin-top:3px}
+.jv-group{margin-top:14px}
+.jv-glabel{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:900;letter-spacing:.4px;margin-bottom:9px}
+.jv-glabel::before{content:"";width:4px;height:13px;border-radius:2px;background:var(--ac)}
+.jv-glabel em{font-style:normal;font-weight:400;color:var(--ink2);font-size:11px}
+.jv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.jv-card{
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:9px;
+  transition:border-color .16s,box-shadow .16s,transform .16s;
+}
+.jv-card:hover{border-color:var(--ac);box-shadow:0 10px 22px -16px rgba(0,0,0,.35);transform:translateY(-2px)}
+.jv-shot{
+  position:relative;display:block;border-radius:10px;overflow:hidden;
+  background:#1B1526;border:1.5px solid #fff;
+  box-shadow:0 4px 12px -8px rgba(0,0,0,.5);
+}
+.jv-shot img{width:100%;height:auto;display:block}
+.jv-zoom{
+  position:absolute;right:6px;bottom:6px;
+  font-size:9.5px;font-weight:800;color:#fff;
+  background:rgba(0,0,0,.42);border-radius:999px;padding:2px 7px;
+  pointer-events:none;
+}
+.jv-cname{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.jv-cname b{font-size:15px;font-weight:900;letter-spacing:.5px}
+.jv-cname span{
+  font-size:10px;font-weight:800;color:var(--ac);
+  background:var(--ac-soft);border-radius:999px;padding:2px 7px;
+}
+.jv-stats{list-style:none;margin:7px 0 0}
+.jv-stats li{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:2.5px 0;font-size:11px;color:var(--ink2);
+}
+.jv-stars{font-style:normal;color:var(--ac);font-size:11px;letter-spacing:.8px;white-space:nowrap}
+.jv-desc{font-size:11px;color:var(--ink2);line-height:1.6;margin-top:7px}
+.jv-adv{font-size:10px;color:#B7A597;margin-top:6px}
+.jv-adv b{color:var(--ac);font-weight:800}
+/* 五维数值条（精灵永恒） */
+.jv-nums{margin:8px 0 0}
+.jv-nums li{display:grid;grid-template-columns:34px 1fr 26px;align-items:center;gap:7px;padding:2px 0}
+.jv-nums .k{font-size:10.5px;color:var(--ink2)}
+.jv-nums .bar{height:5px;border-radius:99px;background:var(--ac-soft);overflow:hidden}
+.jv-nums .bar i{display:block;height:100%;border-radius:99px;background:var(--ac);opacity:.85}
+.jv-nums .v{font-size:11px;font-weight:900;color:var(--ac);font-variant-numeric:tabular-nums;text-align:right}
+.jv-skills{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.jv-skills span{
+  font-size:9.5px;font-weight:800;color:var(--ink2);
+  background:#F7F3EC;border-radius:6px;padding:2px 6px;
+}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+  .jv-grid{grid-template-columns:1fr}
+}
+/*JOBS-CSS-END*/
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../">← 返回首页</a>
+  <span class="brand">精品<i>手游</i>攻略站</span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <img src="../../assets/cover-taoyuan-wide.webp" alt="桃园·将帅录" fetchpriority="high">
+  </section>
+  <div class="hero-head">
+    <div class="chips"><span class="chip hot">热门</span><span class="chip">Q版3D</span><span class="chip">回合制</span></div>
+    <h1>桃园·将帅录</h1>
+    <p class="tagline">Q版三国 · ATB回合策略 · 收录 7 篇攻略</p>
+  </div>
+
+  <p class="intro">幻想三国ATB半即时回合制：云职业转职、将星收集、三端互通。胜负更多取决于阵容结构与站位，而不是单纯数值堆砌；赛季沙盘大地图上，联盟攻城占都城定天下。</p>
+
+  <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">Q版三国 · 回合策略</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS / PC 三端互通</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">云职业转职 · 将星收集</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">赛季沙盘 · 联盟攻城</span></div></section>
+
+
+  <!--JOBS-SECTION-START-->
+  <section class="jobs">
+    <div class="jobs-head">
+      <h2>职业图鉴<small>四大初始职业 · 转职后共 12 种进阶</small></h2>
+      <p>星级取自游戏内创建角色的职业面板，★ 为满档、½ 为半档；点截图可看大图</p>
+    </div>
+    <div class="jv-group">
+      <div class="jv-glabel">初始职业<em>四种底子，决定后面能转什么</em></div>
+      <div class="jv-grid">
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-daijia.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-daijia.webp" alt="桃园将帅录 带甲 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>带甲</b><span>近战 · 抗伤</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★★</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★★★½</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★</i></li>
+      <li><span>行动速度</span><i class="jv-stars">½</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">★★</i></li>
+      </ul>
+      <p class="jv-desc">精近战物理攻击，并能在关键时刻保护同伴不受伤害。</p>
+      <p class="jv-adv">后续可转 <b>虎卫 · 禁卫 · 骠骑</b></p>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-xiake.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-xiake.webp" alt="桃园将帅录 侠客 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>侠客</b><span>近战 · 高速输出</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★★</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★½</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★★</i></li>
+      <li><span>行动速度</span><i class="jv-stars">★★★</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">½</i></li>
+      </ul>
+      <p class="jv-desc">精近战物理攻击，以速度和闪避能力取胜。</p>
+      <p class="jv-adv">后续可转 <b>刺客 · 剑客 · 先登死士</b></p>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-kongxian.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-kongxian.webp" alt="桃园将帅录 控弦 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>控弦</b><span>远程 · 群体输出</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★★★</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★★</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★★</i></li>
+      <li><span>行动速度</span><i class="jv-stars">★½</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">½</i></li>
+      </ul>
+      <p class="jv-desc">精远程物理攻击，可以直接攻击敌方后排单位。</p>
+      <p class="jv-adv">后续可转 <b>强弓 · 劲弩 · 白马义从</b></p>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-baijia.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-baijia.webp" alt="桃园将帅录 百家 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>百家</b><span>远程 · 计策治疗</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★½</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★★½</i></li>
+      <li><span>物理防御</span><i class="jv-stars">½</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★★★</i></li>
+      <li><span>行动速度</span><i class="jv-stars">½</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">★★★</i></li>
+      </ul>
+      <p class="jv-desc">精远程计策攻击，同时还能为团队提供足够的治疗。</p>
+      <p class="jv-adv">后续可转 <b>学士 · 策士 · 道士</b></p>
+    </article>
+      </div>
+    </div>
+    <div class="jv-group">
+      <div class="jv-glabel">进阶职业 · 带甲线<em>虎卫 / 禁卫 / 骠骑</em></div>
+      <div class="jv-grid">
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-huwei.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-huwei.webp" alt="桃园将帅录 虎卫 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>虎卫</b><span>近战 · 爆发</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★★★★</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">½</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★★★★½</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★½</i></li>
+      <li><span>行动速度</span><i class="jv-stars">★½</i></li>
+      <li><span>瞬间爆发</span><i class="jv-stars">★★★★★</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">★★</i></li>
+      </ul>
+      <p class="jv-desc">精近战物理攻击，强力的输出造就了他们狂战士的形象。</p>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-jinwei.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-jinwei.webp" alt="桃园将帅录 禁卫 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>禁卫</b><span>近战 · 防御控场</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★★</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★★½</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★★★★★</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★★½</i></li>
+      <li><span>行动速度</span><i class="jv-stars">★★</i></li>
+      <li><span>瞬间爆发</span><i class="jv-stars">½</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">★★★★</i></li>
+      </ul>
+      <p class="jv-desc">精通战场防御，擅长打乱敌方阵型的同时保护己方阵型不被破坏。</p>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/taoyuan-job-piaoqi.webp" target="_blank" rel="noopener">
+        <img src="../../assets/taoyuan-job-piaoqi.webp" alt="桃园将帅录 骠骑 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>骠骑</b><span>近战 · 冲锋</span></div>
+      <ul class="jv-stats">
+      <li><span>单体攻击</span><i class="jv-stars">★★★★½</i></li>
+      <li><span>范围攻击</span><i class="jv-stars">★★★</i></li>
+      <li><span>物理防御</span><i class="jv-stars">★★★</i></li>
+      <li><span>计策防御</span><i class="jv-stars">★★</i></li>
+      <li><span>行动速度</span><i class="jv-stars">★★½</i></li>
+      <li><span>瞬间爆发</span><i class="jv-stars">★★★★</i></li>
+      <li><span>辅助能力</span><i class="jv-stars">★★★</i></li>
+      </ul>
+      <p class="jv-desc">精近战物理攻击，以强大的骑乘技能对敌方的阵地发起强力的冲击。</p>
+    </article>
+      </div>
+    </div>
+  </section>
+<!--JOBS-SECTION-END-->
+
+  <section class="list">
+    <h2>桃园·将帅录 · 全部 7 篇<small>点开任意一篇直接展开全文</small></h2>
+    <div class="entries">
+<a class="entry" href="../../index.html?a=aaxf6q">
+      <span class="e-date"><i>11.09</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-11-09</span></span>
+        <span class="e-title">推图顺、竞技场连输？两套换脑清单</span>
+        <span class="e-dek">PVE 打的是脚本，PVP 打的是人搭的节奏：竞技场先把次数打满，速度线重算，吴国高速连击可直接抄，组队分工比战力重要。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=cxapcn">
+      <span class="e-date"><i>11.08</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-11-08</span></span>
+        <span class="e-title">打不动不一定是战力低：三个战场细节</span>
+        <span class="e-dek">五行、站位、行动条——卡关时先核对这三样，比回去刷级更快；进本前三十秒看说明，隐藏条件才给稀有奖励。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=f9yvk">
+      <span class="e-date"><i>11.06</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-11-06</span></span>
+        <span class="e-title">新手开荒顺序：加点、将星、装备、阵法与前七天节奏</span>
+        <span class="e-dek">加点定定位、将星放优势、装备补短板、阵法看场景——四件事对齐，同样的材料多走两章主线。</span>
+        <span class="e-foot">约 2 分钟 · 8 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1bc66fs">
+      <span class="e-date"><i>10.28</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-10-28</span></span>
+        <span class="e-title">ATB时序战斗详解：速度决定一切</span>
+        <span class="e-dek">真策略不挂机，谁先出手、谁打断全看速度条，合理搭配阵容打出连招。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=ndql5q">
+      <span class="e-date"><i>10.27</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-10-27</span></span>
+        <span class="e-title">开服公告：10月28日10点全服上线</span>
+        <span class="e-dek">三端互通安卓/iOS/PC同账号同步，新手养成资源返还，阵容随便试不浪费。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=ogu1hd">
+      <span class="e-date"><i>10.27</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-10-27</span></span>
+        <span class="e-title">日常任务玩法全梳理，每天不瞎忙</span>
+        <span class="e-dek">跟着主线走，日常任务高效完成，体力分配优先级，每天10分钟清完日常。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1xmdle1">
+      <span class="e-date"><i>10.23</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">桃园</span><span>2026-10-23</span></span>
+        <span class="e-title">赛季沙盘大地图，联盟攻城完整流程</span>
+        <span class="e-dek">赛季重置机制讲解，联盟攻占都城全过程，感受沙盘策略博弈的乐趣。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="cta-btn" href="../../">← 回首页看全部游戏与攻略</a>
+    <p>客服一对一发下载链接与专属礼包 · 本页已被逛过 <b id="subHits" hidden>—</b> 次</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="../../">精品手游攻略站</a> · <a href="../../stats.html">站点数据</a><br>
+  本页面为推广信息聚合，游戏内容版权归各开发商所有
+</footer>
+
+<script>
+/* 分站浏览计数：失败静默 */
+try{
+  fetch('https://abacus.jasoncameron.dev/hit/jingyu3269.github.io/g-taoyuan', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (d && typeof d.value === 'number'){
+        var el = document.getElementById('subHits');
+        if (el){ el.textContent = d.value; el.hidden = false; }
+      }
+    }).catch(function(){});
+}catch(e){}
+</script>
+
+</body>
+</html>
