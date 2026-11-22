@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小小屠龙·冰雪复古攻略合集 · 精品手游攻略站</title>
+<meta name="description" content="小小屠龙·冰雪复古攻略共 9 篇：冰雪复古 · 打金攻沙。经典冰雪复古传奇：从起源冰城起步，攒够转生材料进二大陆冰雪之城。装备不过商城、毕业装全靠野外掉落，散人自由交易，打金变现…">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ac:#C98A16;--ac-soft:#FFF4DC;--ink:#2D3A2E;--ink2:#6B7A6C;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.65;
+  background:
+    radial-gradient(circle at 10% 0%, #FFF4DC 0%, transparent 42%),
+    radial-gradient(circle at 94% 4%, #FFF3E2 0%, transparent 40%),
+    var(--paper);
+  min-height:100vh;padding:0 14px 56px;
+}
+.wrap{max-width:760px;margin:0 auto}
+/* 顶栏 */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 2px;margin:0 -14px 14px;padding:10px 16px;
+  background:rgba(255,251,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+.back{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-weight:700;
+}
+.back:hover{color:var(--ac);border-color:var(--ac)}
+.brand{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand i{font-style:normal;color:var(--ac)}
+/* 头图：按原图比例展示，不裁切，避免切头 */
+.hero{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:#1B1526;
+  border:3px solid #fff;box-shadow:0 12px 26px -10px rgba(80,50,30,.35);
+}
+.hero img{width:100%;height:auto;display:block}
+.hero-head{padding:14px 4px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 10px;
+  font-size:11.5px;font-weight:800;border-radius:999px;
+  background:var(--ac-soft);color:var(--ac);
+  border:1.5px solid rgba(0,0,0,.04);
+}
+.chip.hot{background:#FF4444;color:#fff;border-color:#FF4444}
+.hero-head h1{font-size:25px;font-weight:900;letter-spacing:.5px;line-height:1.3}
+.tagline{font-size:12.5px;color:var(--ink2);margin-top:4px}
+/* 简介 & 信息卡 */
+.intro{
+  margin:16px 2px 14px;font-size:13.5px;color:var(--ink2);
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;
+}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+.fact{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 13px;
+  box-shadow:0 6px 16px -12px rgba(80,50,30,.3);
+}
+.fk{display:block;font-size:11px;color:var(--ink2);letter-spacing:.4px}
+.fv{font-size:13px;font-weight:800;color:var(--ac)}
+/* 文章列表 */
+.list h2{font-size:16px;display:flex;align-items:baseline;gap:8px}
+.list h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.entries{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.entry{
+  display:flex;align-items:stretch;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:13px 14px;text-decoration:none;color:var(--ink);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 22px -14px var(--ac)}
+.e-date{
+  flex:0 0 52px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--ac-soft);border-radius:12px;color:var(--ac);
+}
+.e-date i{font-style:normal;font-size:14.5px;font-weight:900;font-variant-numeric:tabular-nums}
+.e-date em{font-style:normal;font-size:10px;opacity:.75}
+.e-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.e-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--ink2)}
+.e-tag{
+  display:inline-flex;align-items:center;height:17px;padding:0 7px;
+  background:var(--ac);color:#fff;border-radius:6px;
+  font-size:10.5px;font-weight:800;line-height:1;
+}
+.e-title{font-size:14.5px;font-weight:800;line-height:1.45}
+.e-dek{
+  font-size:12px;color:var(--ink2);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.e-foot{font-size:10.5px;color:#B7A597;margin-top:2px}
+.e-arrow{
+  flex:0 0 auto;align-self:center;color:var(--ac);
+  font-weight:900;font-size:16px;opacity:.55;transition:transform .18s,opacity .18s;
+}
+.entry:hover .e-arrow{transform:translateX(3px);opacity:1}
+/* 底部 CTA & 页脚 */
+.cta{margin:26px 0 8px;text-align:center}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(160deg,var(--ac),var(--ac));
+  color:#fff;text-decoration:none;font-weight:900;font-size:14px;
+  padding:12px 26px;border-radius:999px;
+  box-shadow:0 8px 18px -6px var(--ac);
+}
+.cta-btn:hover{filter:brightness(1.06)}
+.cta p{margin-top:10px;font-size:11.5px;color:var(--ink2)}
+.foot{margin-top:22px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+.foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
+.foot a:hover{color:var(--ac)}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+}
+/* ========== 方框 · 流光边框（光带绕框旋转，与首页一致） ========== */
+@property --flA{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes flowBorder{to{--flA:360deg}}
+.back,.chip,.intro,.fact,.entry,.jv-card,.bk-card,.cta-btn{position:relative}
+.back::after,.intro::after,.fact::after,.entry::after,.jv-card::after{inset:-2px;padding:2.2px}
+.chip::after,.bk-id::after{inset:-1.5px;padding:1.7px}
+.cta-btn::after{inset:-2.4px;padding:2.6px}
+.bk-card::after{inset:0;padding:2.2px}
+.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.back:hover::after,.chip:hover::after,.entry:hover::after{animation-duration:2s}
+.hero,.jcard{
+  --flA:0deg;border-color:transparent;
+  background-image:linear-gradient(#1B1526,#1B1526),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.jcard{
+  background-image:linear-gradient(#fff,#fff),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.jcard,.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../">← 返回首页</a>
+  <span class="brand">精品<i>手游</i>攻略站</span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <img src="../../assets/cover-legend.webp" alt="小小屠龙·冰雪复古" fetchpriority="high">
+  </section>
+  <div class="hero-head">
+    <div class="chips"><span class="chip hot">打金</span><span class="chip">复古传奇</span><span class="chip">高爆率</span></div>
+    <h1>小小屠龙·冰雪复古</h1>
+    <p class="tagline">冰雪复古 · 打金攻沙 · 收录 9 篇攻略</p>
+  </div>
+
+  <p class="intro">经典冰雪复古传奇：从起源冰城起步，攒够转生材料进二大陆冰雪之城。装备不过商城、毕业装全靠野外掉落，散人自由交易，打金变现无门槛。</p>
+
+  <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">冰雪复古 · 单职业</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS 双端</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">装备全靠打 · 自由交易</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">转生进阶 · 打金攻沙</span></div></section>
+
+
+  <section class="list">
+    <h2>小小屠龙·冰雪复古 · 全部 9 篇<small>点开任意一篇直接展开全文</small></h2>
+    <div class="entries">
+<a class="entry" href="../../index.html?a=1abwcv8">
+      <span class="e-date"><i>11.09</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-09</span></span>
+        <span class="e-title">蹲一晚 BOSS 空手而归？先分清三种场面</span>
+        <span class="e-dek">BOSS 是场合不是关卡：到场、出力、守规矩，三件做到了，装备差一点也能分到东西。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=hifvbs">
+      <span class="e-date"><i>11.08</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-08</span></span>
+        <span class="e-title">换装指南：先定标准，别把过渡装当毕业装养</span>
+        <span class="e-dek">先判断缺的是「能站」还是「能打」，再按武器→防具→续航的顺序补；过渡装不强化不改造，元宝只花在两个信号上。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1dcvmr">
+      <span class="e-date"><i>11.06</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-06</span></span>
+        <span class="e-title">开局避坑指南：时间、元宝、泡点三件事理清再上路</span>
+        <span class="e-dek">时间是成本，元宝是血液，泡点是福利——点卡制新手开局，把点卡花在这三样上就不会走歪。</span>
+        <span class="e-foot">约 2 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1t5u68i">
+      <span class="e-date"><i>11.05</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-05</span></span>
+        <span class="e-title">卡级怎么破？先分清你卡的是哪一道门槛</span>
+        <span class="e-dek">卡级不是更肝也不是更氪：先看转生清单，再补短板，卡着线转生，转完先站住。</span>
+        <span class="e-foot">约 2 分钟 · 8 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=2tyf96">
+      <span class="e-date"><i>11.05</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-05</span></span>
+        <span class="e-title">魔血石+盟重回城石：一个管命，一个管时间</span>
+        <span class="e-dek">被太多人忽略的两样节奏神器：魔血石是你随身的第二管血，回城石帮你省下每一分钟跑图时间。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1vmzq59">
+      <span class="e-date"><i>11.03</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-03</span></span>
+        <span class="e-title">打金规则：装备不过商城，散人天堂</span>
+        <span class="e-dek">毕业装只能野外掉落，屠龙刀全靠打，自由交易无门槛，打金变现路线。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=pat9oq">
+      <span class="e-date"><i>11.02</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-11-02</span></span>
+        <span class="e-title">转生攻略：转生转不对打宝全白费</span>
+        <span class="e-dek">转生决定你能进哪张图、能爆什么装备，转生等级和地图掉落对应关系。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1iqon8f">
+      <span class="e-date"><i>10.30</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-10-30</span></span>
+        <span class="e-title">新手开荒先学会&quot;省&quot;，零氪也能发育</span>
+        <span class="e-dek">省经验卷留关键等级用，省材料别乱合，省金币摆摊时用，四件事做到稳发育。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1h99ohi">
+      <span class="e-date"><i>10.22</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">冰雪</span><span>2026-10-22</span></span>
+        <span class="e-title">升级攻略：最快速度冲级转生</span>
+        <span class="e-dek">主线任务一路推到底，土城激情泡点别停，前期最效率的升级路线。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="cta-btn" href="../../">← 回首页看全部游戏与攻略</a>
+    <p>客服一对一发下载链接与专属礼包 · 本页已被逛过 <b id="subHits" hidden>—</b> 次</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="../../">精品手游攻略站</a> · <a href="../../stats.html">站点数据</a><br>
+  本页面为推广信息聚合，游戏内容版权归各开发商所有
+</footer>
+
+<script>
+/* 分站浏览计数：失败静默 */
+try{
+  fetch('https://abacus.jasoncameron.dev/hit/jingyu3269.github.io/g-xxtl', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (d && typeof d.value === 'number'){
+        var el = document.getElementById('subHits');
+        if (el){ el.textContent = d.value; el.hidden = false; }
+      }
+    }).catch(function(){});
+}catch(e){}
+</script>
+
+</body>
+</html>
