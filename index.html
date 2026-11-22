@@ -578,6 +578,56 @@ button{font-family:inherit;cursor:pointer;border:none}
 .game-cover img{
   width:100%;height:100%;object-fit:cover;object-position:center;display:block;
 }
+
+/* ===== 精选手游库：悬停浮出「图标 + 立即下载」 ===== */
+.game-cover img{transition:transform .45s ease}
+.game-card:hover .game-cover img,
+.game-card:focus-within .game-cover img{transform:scale(1.055)}
+.gc-hover{
+  position:absolute;inset:0;z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  padding:12px;text-align:center;
+  background:radial-gradient(130% 110% at 50% 106%,
+    rgba(11,4,15,.92) 0%,rgba(11,4,15,.66) 54%,rgba(11,4,15,.22) 100%);
+  opacity:0;pointer-events:none;
+  transition:opacity .22s ease;
+}
+.game-card:hover .gc-hover,
+.game-card:focus-within .gc-hover{opacity:1}
+/* 游戏图标方框：和下载专区的 .dz-icon 同一套观感 */
+.gc-hover-ico{
+  width:74px;height:74px;border-radius:17px;overflow:hidden;flex:0 0 auto;
+  background:#0B1A2A;
+  box-shadow:0 12px 24px -6px rgba(0,0,0,.8),0 0 0 2.5px rgba(255,255,255,.94),0 0 0 6px rgba(255,255,255,.12);
+  transform:translateY(10px) scale(.9);
+  transition:transform .3s cubic-bezier(.2,1.35,.5,1);
+}
+.gc-hover-ico img{width:100%;height:100%;object-fit:cover;display:block}
+.game-card:hover .gc-hover-ico,
+.game-card:focus-within .gc-hover-ico{transform:none}
+/* 图标下面的下载按钮：沿用下载专区的糖果按钮 */
+.gc-hover-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.gc-hover .dz-cta{
+  pointer-events:auto;cursor:pointer;
+  padding:6px 15px;font-size:12.5px;gap:3px;
+  transform:translateY(12px) scale(.94);
+  transition:transform .28s cubic-bezier(.2,1.35,.5,1) .04s;
+}
+.game-card:hover .gc-hover .dz-cta,
+.game-card:focus-within .gc-hover .dz-cta{transform:none}
+.gc-hover .dz-cta:hover{transform:translateY(-1px)}
+.gc-hover .dz-cta:active{transform:translateY(2px) scale(.99);box-shadow:0 2px 0 #C81A63,0 4px 10px rgba(255,46,133,.35)}
+.gc-hover .dz-cta:focus-visible{outline:2.5px solid rgba(255,255,255,.9);outline-offset:3px}
+/* 触屏没有 hover：不显示浮层，直接点封面/按钮下载 */
+@media (hover:none){
+  .gc-hover{display:none}
+  .game-cover img{transition:none}
+  .game-card:hover .game-cover img{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .gc-hover,.gc-hover .dz-cta,.gc-hover-ico,.game-cover img{transition:none}
+  .game-card:hover .game-cover img{transform:none}
+}
 .game-body{padding:12px 8px 4px;position:relative;z-index:1}
 .game-name{
   font-size:18px;font-weight:900;color:#fff;
@@ -3125,7 +3175,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
   <div class="game-grid">
 
     <!-- 桃园将帅录 -->
-    <div class="game-card gc-pink">
+    <div class="game-card gc-pink" data-icon="assets/dl-taoyuan-v3.webp" data-game="桃园·将帅录">
       <span class="gc-sticker">🌸</span>
       <a class="game-cover" href="https://sdkn-ldy.zhangyu39.com/?app_id=7711&amp;promote_id=2038" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载桃园·将帅录">
         <img src="assets/cover-taoyuan-card.webp" alt="桃园·将帅录" loading="lazy" decoding="async">
@@ -3153,7 +3203,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 小小屠龙·冰雪复古 -->
-    <div class="game-card gc-gold">
+    <div class="game-card gc-gold" data-icon="assets/dl-tulong.webp" data-game="小小屠龙·冰雪复古">
       <span class="gc-sticker">❄️</span>
       <a class="game-cover" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载小小屠龙·冰雪复古">
         <img src="assets/cover-legend.webp" alt="小小屠龙·冰雪复古" loading="lazy" decoding="async">
@@ -3178,7 +3228,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 精灵永恒（11-17 临时隐藏） -->
-    <div class="game-card gc-violet" style="display:none">
+    <div class="game-card gc-violet" style="display:none" data-icon="assets/icon-jingling.webp" data-game="精灵永恒">
       <span class="gc-sticker">🧚</span>
       <div class="game-cover">
         <img src="assets/cover-jingling2.webp" alt="精灵永恒" loading="lazy" decoding="async">
@@ -3203,7 +3253,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 露娜2：拾光之约 -->
-    <div class="game-card gc-blue">
+    <div class="game-card gc-blue" data-icon="assets/icon-luna.webp" data-game="露娜2：拾光之约">
       <span class="gc-sticker">🌙</span>
       <div class="game-cover">
         <img src="assets/luna-card.webp" alt="露娜2：拾光之约" loading="lazy" decoding="async">
@@ -3228,7 +3278,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 传奇盛世移动版-3D点卡 -->
-    <div class="game-card gc-gold">
+    <div class="game-card gc-gold" data-icon="assets/dl-cssj.webp" data-game="传奇盛世移动版-3D点卡">
       <span class="gc-sticker">🎴</span>
       <a class="game-cover" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载传奇盛世移动版-3D点卡">
         <img src="assets/cover-cssj.webp" alt="传奇盛世移动版-3D点卡" loading="lazy" decoding="async">
@@ -3253,7 +3303,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 武林外传：十年之约 -->
-    <div class="game-card gc-jade">
+    <div class="game-card gc-jade" data-icon="assets/dl-wulin.webp" data-game="武林外传：十年之约">
       <span class="gc-sticker">🏮</span>
       <div class="game-cover">
         <img src="assets/cover-wulin.webp" alt="武林外传：十年之约" loading="lazy" decoding="async">
@@ -3280,7 +3330,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
     <!-- 英雄连城（11-17 临时隐藏） -->
-    <div class="game-card gc-green" style="display:none">
+    <div class="game-card gc-green" style="display:none" data-icon="assets/icon-liancheng.webp" data-game="英雄连城">
       <span class="gc-sticker">🏹</span>
       <div class="game-cover">
         <img src="assets/cover-liancheng.webp" alt="英雄连城" loading="lazy" decoding="async">
@@ -6501,6 +6551,101 @@ function navSearch(){
     try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); }
   }, 460);
 }
+
+/* ===== 精选手游库：悬停浮出「游戏图标 + 立即下载」 ===== */
+(function(){
+  function openLink(url){
+    if(!url) return;
+    if(url.indexOf('://') < 0){ window.location.href = url; }
+    else { window.open(url, '_blank', 'noopener'); }
+  }
+  function mkBtn(label, url, name){
+    var el = document.createElement('span');
+    el.className = 'dz-cta gc-hover-btn';
+    el.textContent = label;
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    function go(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(url){ openLink(url); }
+      else if(typeof copyWechat === 'function'){ copyWechat(name || ''); }
+    }
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); e.stopPropagation(); go(e); }
+    });
+    return el;
+  }
+  function build(){
+    var cards = document.querySelectorAll('#games .game-card');
+    Array.prototype.forEach.call(cards, function(card){
+      var cover = card.querySelector('.game-cover');
+      if(!cover || cover.querySelector('.gc-hover')) return;
+      var name = card.getAttribute('data-game') || '';
+      if(!name){
+        var nameEl = card.querySelector('.game-name');
+        name = nameEl ? nameEl.textContent.trim() : '';
+      }
+      var icon = card.getAttribute('data-icon') || '';
+      var coverImg = cover.querySelector('img');
+      if(!icon && coverImg) icon = coverImg.getAttribute('src');
+
+      var coverA = (cover.tagName === 'A' && cover.getAttribute('href')) ? cover : null;
+      var pairBtns = card.querySelectorAll('.game-btns .game-btn[href]');
+      var singleA = card.querySelector('a.game-btn[href]');
+      var subLink = card.querySelector('.game-sub[href]');
+
+      var box = document.createElement('div');
+      box.className = 'gc-hover';
+      box.setAttribute('aria-hidden', 'true');
+
+      if(icon){
+        var ico = document.createElement('span');
+        ico.className = 'gc-hover-ico';
+        var im = document.createElement('img');
+        im.src = icon; im.alt = name + ' 图标';
+        im.width = 160; im.height = 160; im.loading = 'lazy'; im.decoding = 'async';
+        ico.appendChild(im);
+        box.appendChild(ico);
+      }
+
+      var row = document.createElement('div');
+      row.className = 'gc-hover-btns';
+      var mainHref = '';
+
+      if(pairBtns.length >= 2){
+        Array.prototype.forEach.call(pairBtns, function(a){
+          var h = a.getAttribute('href');
+          if(!mainHref) mainHref = h;
+          var t = (a.textContent || '').trim();
+          row.appendChild(mkBtn(t, h, name));
+        });
+      }else if(coverA || singleA){
+        mainHref = coverA ? coverA.getAttribute('href') : singleA.getAttribute('href');
+        row.appendChild(mkBtn('⬇ 立即下载', mainHref, name));
+      }else if(subLink){
+        mainHref = subLink.getAttribute('href');
+        row.appendChild(mkBtn('📖 查看攻略', mainHref, name));
+      }else{
+        row.appendChild(mkBtn('🎁 找客服领取', '', name));
+      }
+
+      box.appendChild(row);
+      cover.appendChild(box);
+
+      if(!coverA && mainHref){
+        cover.style.cursor = 'pointer';
+        cover.addEventListener('click', function(){ openLink(mainHref); });
+      }
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', build);
+  }else{
+    build();
+  }
+})();
 </script>
 
 <!-- ===== 联系客服弹层 ===== -->
