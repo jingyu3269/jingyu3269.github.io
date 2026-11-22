@@ -670,10 +670,11 @@ button{font-family:inherit;cursor:pointer;border:none}
   .gc-hover,.gc-hover .dz-cta,.gc-hover-ico,.game-cover img{transition:none}
   .game-card:hover .game-cover img{transform:none}
 }
-.game-body{padding:12px 8px 4px;position:relative;z-index:1}
+/* 卡片正文：精简版只留游戏名（封面图下方一行） */
+.game-body{padding:11px 8px 6px;position:relative;z-index:1;text-align:center}
 .game-name{
   font-size:18px;font-weight:900;color:#fff;
-  letter-spacing:.5px;margin-bottom:6px;
+  letter-spacing:.8px;margin:0;
   text-shadow:0 2px 0 rgba(0,0,0,.16);
 }
 .game-tags{
@@ -3212,60 +3213,32 @@ html.poster-open,html.poster-open body{overflow:hidden}
   <div class="section-title">
     <div class="tag">热门推荐</div>
     <h2>精选手游库</h2>
-    <p>点击封面或「立即下载游戏」，直接下载官方安装包</p>
+    <p>点击封面直接下载官方安装包，鼠标移到封面可看下载入口</p>
   </div>
   <div class="game-grid">
 
     <!-- 桃园将帅录 -->
-    <div class="game-card gc-pink" data-icon="assets/dl-taoyuan-v3.webp" data-game="桃园·将帅录">
+    <div class="game-card gc-pink" data-icon="assets/dl-taoyuan-v3.webp" data-game="桃园·将帅录"
+         data-href="https://sdkn-ldy.zhangyu39.com/?app_id=7736&amp;promote_id=2038" data-cta="🤖 安卓下载"
+         data-href2="https://sdkn-ldy.zhangyu39.com/?app_id=7711&amp;promote_id=2038" data-cta2=" 苹果下载">
       <span class="gc-sticker">🌸</span>
       <a class="game-cover" href="https://sdkn-ldy.zhangyu39.com/?app_id=7711&amp;promote_id=2038" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载桃园·将帅录">
         <img src="assets/cover-taoyuan-card.webp" alt="桃园·将帅录" loading="lazy" decoding="async">
       </a>
       <div class="game-body">
         <div class="game-name">桃园·将帅录</div>
-        <div class="game-tags">
-          <span class="game-tag hot">热门</span>
-          <span class="game-tag">Q版3D</span>
-          <span class="game-tag">回合制</span>
-        </div>
-        <p class="game-desc">幻想三国ATB半即时回合制，云职业转职，将星收集，三端互通。</p>
-        <ul class="game-tips">
-          <li>三端互通，安卓/iOS/PC同账号同步</li>
-          <li>ATB时序战斗，速度决定出手与打断</li>
-          <li>新手资源返还，阵容随便试不浪费</li>
-          <li>赛季沙盘攻城，联盟占都城定天下</li>
-        </ul>
-        <div class="game-btns">
-          <a class="game-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7736&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a>
-          <a class="game-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7711&amp;promote_id=2038" target="_blank" rel="noopener"> 苹果下载</a>
-        </div>
-        <a class="game-sub" href="g/taoyuan/">📖 进入分站 · 7 篇攻略</a>
       </div>
     </div>
 
     <!-- 小小屠龙·冰雪复古 -->
-    <div class="game-card gc-gold" data-icon="assets/dl-tulong.webp" data-game="小小屠龙·冰雪复古">
+    <div class="game-card gc-gold" data-icon="assets/dl-tulong.webp" data-game="小小屠龙·冰雪复古"
+         data-href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" data-cta="⬇ 立即下载">
       <span class="gc-sticker">❄️</span>
       <a class="game-cover" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载小小屠龙·冰雪复古">
         <img src="assets/cover-legend.webp" alt="小小屠龙·冰雪复古" loading="lazy" decoding="async">
       </a>
       <div class="game-body">
         <div class="game-name">小小屠龙·冰雪复古</div>
-        <div class="game-tags">
-          <span class="game-tag hot">打金</span>
-          <span class="game-tag">复古传奇</span>
-          <span class="game-tag">高爆率</span>
-        </div>
-        <p class="game-desc">经典冰雪复古传奇，装备全靠打，散人打金天堂，自由交易。</p>
-        <ul class="game-tips">
-          <li>主线推到底+土城泡点，前期升级最快</li>
-          <li>转生决定进图与爆装，转错打宝全白费</li>
-          <li>装备不过商城，毕业装全靠野外掉落</li>
-          <li>散人自由交易，打金变现无门槛</li>
-        </ul>
-        <a class="game-btn" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxOTEsNTE5MCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">⬇️ 立即下载游戏</a>
-        <a class="game-sub" href="g/xxtl/">📖 进入分站 · 9 篇攻略</a>
       </div>
     </div>
 
@@ -3277,97 +3250,43 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </div>
       <div class="game-body">
         <div class="game-name">精灵永恒</div>
-        <div class="game-tags">
-          <span class="game-tag hot">热门</span>
-          <span class="game-tag">3D精灵</span>
-          <span class="game-tag">MMO打宝</span>
-        </div>
-        <p class="game-desc">怀旧精灵3D MMO，精灵切换配队，摆摊打金，圣物养成，三端互通。</p>
-        <ul class="game-tips">
-          <li>1-30级主线无脑冲，快速度过开荒期</li>
-          <li>战斗靠精灵切换+技能把控，别站桩硬刚</li>
-          <li>开荒期基础材料最值钱，摆摊低买高卖</li>
-          <li>第二赛季圣物系统解锁，战力大幅提升</li>
-        </ul>
-        <button class="game-btn" onclick="copyWechat('精灵永恒')">🎁 领取下载与攻略</button>
-        <a class="game-sub" href="g/jingling/">📖 进入分站 · 12 篇攻略</a>
       </div>
     </div>
 
     <!-- 露娜2：拾光之约 -->
-    <div class="game-card gc-blue" data-icon="assets/icon-luna.webp" data-game="露娜2：拾光之约">
+    <div class="game-card gc-blue" data-icon="assets/icon-luna.webp" data-game="露娜2：拾光之约"
+         data-href="g/luna2/" data-cta="📖 查看攻略">
       <span class="gc-sticker">🌙</span>
       <div class="game-cover">
         <img src="assets/luna-card.webp" alt="露娜2：拾光之约" loading="lazy" decoding="async">
       </div>
       <div class="game-body">
         <div class="game-name">露娜2：拾光之约</div>
-        <div class="game-tags">
-          <span class="game-tag hot">12.10 公测</span>
-          <span class="game-tag">PC端游</span>
-          <span class="game-tag">萌系MMO</span>
-        </div>
-        <p class="game-desc">首款萌世代官方正版，经典露娜IP回归，情侣配对社交玩法，奇幻冒险乐园。</p>
-        <ul class="game-tips">
-          <li>12 月 10 日公测开服，抢先预约不迷路</li>
-          <li>经典萌系画风，Q萌人设治愈全场</li>
-          <li>情侣配对、家族社交，还原露娜经典玩法</li>
-          <li>公测专属礼包客服直接发，开服即领</li>
-        </ul>
-        <button class="game-btn" onclick="copyWechat('露娜2：拾光之约')">🎁 预约领公测福利</button>
-        <a class="game-sub" href="g/luna2/">📖 进入分站 · 5 篇攻略</a>
       </div>
     </div>
 
     <!-- 传奇盛世移动版-3D点卡 -->
-    <div class="game-card gc-gold" data-icon="assets/dl-cssj.webp" data-game="传奇盛世移动版-3D点卡">
+    <div class="game-card gc-gold" data-icon="assets/dl-cssj.webp" data-game="传奇盛世移动版-3D点卡"
+         data-href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" data-cta="⬇ 立即下载">
       <span class="gc-sticker">🎴</span>
       <a class="game-cover" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载传奇盛世移动版-3D点卡">
         <img src="assets/cover-cssj.webp" alt="传奇盛世移动版-3D点卡" loading="lazy" decoding="async">
       </a>
       <div class="game-body">
         <div class="game-name">传奇盛世移动版-3D点卡</div>
-        <div class="game-tags">
-          <span class="game-tag hot">点卡计时</span>
-          <span class="game-tag">3D 传奇</span>
-          <span class="game-tag">移动互通</span>
-        </div>
-        <p class="game-desc">3D 传奇点卡移动版：画面换成真 3D，点卡只买时长不卖属性，装备全靠打、野外爆装自由交易。</p>
-        <ul class="game-tips">
-          <li>点卡按在线时长扣，挂机前先算好余额</li>
-          <li>主线推图打底，等级上去再进高级打宝图</li>
-          <li>野外 BOSS 与精英怪是装备主要来源</li>
-          <li>点一下封面图就能直接下载安装</li>
-        </ul>
-        <a class="game-btn" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUyMjEsNTIyMCwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">⬇️ 立即下载游戏</a>
-        <a class="game-sub" href="g/cq3d/">📖 进入分站 · 6 篇攻略</a>
       </div>
     </div>
 
     <!-- 武林外传：十年之约 -->
-    <div class="game-card gc-jade" data-icon="assets/dl-wulin.webp" data-game="武林外传：十年之约">
+    <div class="game-card gc-jade" data-icon="assets/dl-wulin.webp" data-game="武林外传：十年之约"
+         data-href="https://sdkn-ldy.zhangyu39.com/?app_id=7669&amp;promote_id=2038" data-cta="🤖 安卓下载"
+         data-href2="https://sdkn-ldy.zhangyu39.com/?app_id=7672&amp;promote_id=2038" data-cta2=" 苹果下载">
       <span class="gc-sticker">🏮</span>
       <div class="game-cover">
         <img src="assets/cover-wulin.webp" alt="武林外传：十年之约" loading="lazy" decoding="async">
       </div>
       <div class="game-body">
         <div class="game-name">武林外传：十年之约</div>
-        <div class="game-tags">
-          <span class="game-tag hot">绿色版</span>
-          <span class="game-tag">武侠MMO</span>
-          <span class="game-tag">十年情怀</span>
-        </div>
-        <p class="game-desc">经典同福客栈 IP 正版武侠 MMO，十年之约全员回归，绿色版轻量不肝，三端同服。</p>
-        <ul class="game-tips">
-          <li>主线跟着客栈剧情走，越往后玩法解锁越多</li>
-          <li>绿色版不卖属性，等级与装备全靠日常积累</li>
-          <li>帮派结义是核心，组队刷本收益远高于单干</li>
-          <li>活跃度攒坐骑与外观，元宝先别急着花</li>
-        </ul>
-        <div class="game-btns">
-          <a class="game-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7669&amp;promote_id=2038" target="_blank" rel="noopener">🤖 安卓下载</a>
-          <a class="game-btn" href="https://sdkn-ldy.zhangyu39.com/?app_id=7672&amp;promote_id=2038" target="_blank" rel="noopener"> 苹果下载</a>
-        </div>
       </div>
     </div>
 
@@ -3379,24 +3298,6 @@ html.poster-open,html.poster-open body{overflow:hidden}
       </div>
       <div class="game-body">
         <div class="game-name">英雄连城</div>
-        <div class="game-tags">
-          <span class="game-tag hot">经典回归</span>
-          <span class="game-tag">奇迹情怀</span>
-          <span class="game-tag">打宝PK</span>
-        </div>
-        <p class="game-desc">情怀向经典回归，只为奇迹老玩家而生，装备靠打、自由交易、行会攻城。</p>
-        <div class="game-cd" id="lcCd">
-          <span>距 11.20 正式开服</span>
-          <span class="gc-time"><b id="lcD">--</b><i>天</i><b id="lcH">--</b><s>:</s><b id="lcM">--</b><s>:</s><b id="lcS">--</b></span>
-        </div>
-        <ul class="game-tips">
-          <li>主线优先，等级决定进图与掉落门槛</li>
-          <li>装备以野外和副本掉落为主，先凑套装</li>
-          <li>交易行低买高卖，前期材料最抢手</li>
-          <li>攻城战跟行会走，散人别单挑硬冲</li>
-        </ul>
-        <button class="game-btn" onclick="copyWechat('英雄连城')">🎁 领取下载与攻略</button>
-        <a class="game-sub" href="g/liancheng/">📖 进入分站 · 5 篇攻略</a>
       </div>
     </div>
 
@@ -6656,6 +6557,11 @@ function navSearch(){
       if(!icon && coverImg) icon = coverImg.getAttribute('src');
 
       var coverA = (cover.tagName === 'A' && cover.getAttribute('href')) ? cover : null;
+      /* 卡片正文已精简为「封面 + 游戏名」，下载信息改由 data-href / data-cta 承载 */
+      var dHref = card.getAttribute('data-href') || '';
+      var dCta = card.getAttribute('data-cta') || '';
+      var dHref2 = card.getAttribute('data-href2') || '';
+      var dCta2 = card.getAttribute('data-cta2') || '';
       var pairBtns = card.querySelectorAll('.game-btns .game-btn[href]');
       var singleA = card.querySelector('a.game-btn[href]');
       var subLink = card.querySelector('.game-sub[href]');
@@ -6678,7 +6584,11 @@ function navSearch(){
       row.className = 'gc-hover-btns';
       var mainHref = '';
 
-      if(pairBtns.length >= 2){
+      if(dHref){
+        mainHref = dHref;
+        row.appendChild(mkBtn(dCta || '⬇ 立即下载', dHref, name));
+        if(dHref2){ row.appendChild(mkBtn(dCta2 || ' 苹果下载', dHref2, name)); }
+      }else if(pairBtns.length >= 2){
         Array.prototype.forEach.call(pairBtns, function(a){
           var h = a.getAttribute('href');
           if(!mainHref) mainHref = h;
