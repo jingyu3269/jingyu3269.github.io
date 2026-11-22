@@ -2882,47 +2882,6 @@ html.poster-open,html.poster-open body{overflow:hidden}
   .nb-item{transition:none}
 }
 
-/* ===== 热门攻略榜（参考 hyhjsy 排行榜） ===== */
-.rank-list{
-  max-width:980px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;
-}
-.rank-item{
-  display:flex;align-items:center;gap:11px;width:100%;text-align:left;
-  padding:11px 14px;border-radius:14px;cursor:pointer;
-  background:#fff;border:1.5px solid var(--line);font-family:inherit;
-  transition:transform .16s,box-shadow .16s,border-color .16s;
-}
-.rank-item:hover{
-  transform:translateY(-2px);border-color:rgba(255,92,162,.45);
-  box-shadow:0 10px 22px -14px rgba(242,92,84,.5);
-}
-.rank-no{
-  flex:0 0 26px;height:26px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:900;font-variant-numeric:tabular-nums;
-  background:#F5EFE4;color:#A8917A;
-}
-.rank-item:nth-child(1) .rank-no{background:linear-gradient(160deg,#FFD76B,#F0A020);color:#7A4600;box-shadow:0 4px 10px rgba(240,160,32,.32)}
-.rank-item:nth-child(2) .rank-no{background:linear-gradient(160deg,#E2E9F0,#A9B7C6);color:#46525F}
-.rank-item:nth-child(3) .rank-no{background:linear-gradient(160deg,#F3C7A0,#D08B5B);color:#6B3A16}
-.rank-main{flex:1;min-width:0}
-.rank-main b{
-  display:block;font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.45;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-.rank-main em{display:block;font-style:normal;font-size:11.5px;color:#9A8B80;margin-top:3px}
-.rank-arrow{flex:0 0 auto;color:#D5C4B4;font-weight:900;font-size:14px;transition:transform .16s,color .16s}
-.rank-item:hover .rank-arrow{color:#F25C54;transform:translateX(2px)}
-@media (max-width:760px){
-  .rank-list{grid-template-columns:1fr;gap:8px}
-  .rank-item{padding:10px 12px;gap:10px}
-  .rank-main b{font-size:13.5px}
-  .rank-main em{font-size:11px}
-}
-@media (prefers-reduced-motion:reduce){
-  .rank-item,.rank-arrow{transition:none}
-}
 </style>
 </head>
 <body>
@@ -3239,16 +3198,6 @@ html.poster-open,html.poster-open body{overflow:hidden}
     </div>
 
   </div>
-</section>
-
-<!-- ===== 热门攻略榜 ===== -->
-<section class="section" id="rank">
-  <div class="section-title">
-    <div class="tag">热门榜单</div>
-    <h2>本周最热攻略 TOP 8</h2>
-    <p>按更新时间排列 · 点一条直接展开全文，不用跳页</p>
-  </div>
-  <div class="rank-list" id="rankList" aria-live="polite"></div>
 </section>
 
 <!--LUCK-START-->
@@ -6409,28 +6358,6 @@ function navSearch(){
     try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); }
   }, 460);
 }
-/* ===== 热门攻略榜 TOP 8 ===== */
-(function(){
-  var box = document.getElementById('rankList');
-  if(!box) return;
-  var pool = (typeof visibleArticles === 'function') ? visibleArticles() : ARTICLES;
-  if(!pool || !pool.length) return;
-  var arr = pool.slice().sort(function(a, b){
-    return a.date === b.date ? 0 : (a.date < b.date ? 1 : -1);
-  }).slice(0, 8);
-  box.innerHTML = arr.map(function(a, i){
-    return '<button type="button" class="rank-item" data-key="' + esc(articleKey(a)) + '">' +
-      '<span class="rank-no">' + (i + 1) + '</span>' +
-      '<span class="rank-main"><b>' + esc(a.title) + '</b>' +
-      '<em>' + esc(a.game) + ' · 更新 ' + esc((a.date || '').slice(5)) + '</em></span>' +
-      '<span class="rank-arrow" aria-hidden="true">\u2192</span></button>';
-  }).join('');
-  box.addEventListener('click', function(e){
-    var btn = e.target.closest ? e.target.closest('.rank-item') : null;
-    if(!btn) return;
-    jumpToArticle(btn.getAttribute('data-key'));
-  });
-})();
 </script>
 </body>
 </html>
