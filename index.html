@@ -139,6 +139,79 @@ button{font-family:inherit;cursor:pointer;border:none}
 .nav-cta:active{transform:scale(.95)}
 
 
+
+/* ===== 联系客服弹层（二维码 + 微信号复制） ===== */
+.svc-modal{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  padding:16px;overflow:auto;
+  background:rgba(34,20,26,.52);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  animation:smFade .22s ease;
+}
+.svc-modal[hidden]{display:none}
+@keyframes smFade{from{opacity:0}to{opacity:1}}
+.svc-modal-card{
+  position:relative;width:340px;max-width:100%;
+  background:#fff;border-radius:24px;
+  padding:22px 20px 18px;text-align:center;
+  box-shadow:0 26px 60px -18px rgba(30,10,20,.55),0 0 0 1px rgba(255,255,255,.6) inset;
+  animation:smFade .24s ease;
+  transform:scale(var(--svc-scale,1));
+  transform-origin:center center;
+}
+.sm-close{
+  position:absolute;right:10px;top:10px;
+  width:28px;height:28px;padding:0;border:0;border-radius:50%;
+  background:#F6EFE6;color:#9A8B80;font-size:17px;line-height:1;cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.sm-close:hover{background:#FFE3EE;color:#E0126B}
+.sm-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:11.5px;font-weight:800;color:#C2185B;
+  background:#FDEBF2;border-radius:999px;padding:3px 11px;margin-bottom:9px;
+}
+.sm-title{font-size:19px;font-weight:900;color:#2D3A2E;letter-spacing:.3px;line-height:1.3}
+.sm-title b{color:#E0126B}
+.sm-sub{font-size:11.5px;color:#8A7A6C;line-height:1.65;margin:6px 0 14px}
+.sm-qr{
+  width:196px;height:196px;margin:0 auto;padding:7px;
+  background:#fff;border-radius:16px;
+  box-shadow:0 0 0 1.5px #F0E6D2,0 12px 26px -14px rgba(120,60,90,.5);
+  position:relative;
+}
+.sm-qr img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}
+.sm-qr::after{
+  content:"";position:absolute;left:10%;right:10%;top:12%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,#FF5FA2,#FFC24D,transparent);
+  box-shadow:0 0 10px rgba(255,95,162,.8);
+  animation:qrScan 3.2s ease-in-out infinite;
+}
+.sm-id{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin:14px 0 10px;padding:9px 13px;
+  background:#FFF7F0;border:1.5px dashed #F3D9C2;border-radius:13px;
+}
+.sm-id-label{font-size:11px;font-weight:800;color:#B08571;letter-spacing:.4px;flex:0 0 auto}
+.sm-id b{
+  font-size:14.5px;font-weight:900;color:#D4246E;letter-spacing:.6px;
+  font-variant-numeric:tabular-nums;word-break:break-all;text-align:right;
+}
+.sm-copy{
+  width:100%;padding:11px 16px;border:0;border-radius:999px;cursor:pointer;
+  background:linear-gradient(180deg,#FF5FA2,#F0338A);color:#fff;
+  font-size:14px;font-weight:900;letter-spacing:.4px;font-family:inherit;
+  box-shadow:0 5px 0 #C41A66,0 12px 22px -10px rgba(240,51,138,.75);
+  transition:transform .14s,box-shadow .14s;
+}
+.sm-copy:hover{transform:translateY(-1px)}
+.sm-copy:focus-visible,.sm-close:focus-visible{outline:2.5px solid rgba(255,95,162,.55);outline-offset:3px}
+.sm-copy:active{transform:translateY(2px);box-shadow:0 2px 0 #C41A66}
+.sm-tip{font-size:10.5px;color:#A99A8C;line-height:1.6;margin-top:9px}
+@media (prefers-reduced-motion:reduce){
+  .svc-modal,.svc-modal-card,.sm-qr::after{animation:none}
+}
 /* 顶部胶囊导航（原 hero 徽标位置） */
 .hero-nav{
   display:inline-flex;align-items:center;justify-content:center;gap:2px;
@@ -2951,7 +3024,7 @@ html.poster-open,html.poster-open body{overflow:hidden}
     <a href="#games">怀旧游戏</a>
     <a href="pc/">模拟器</a>
     <a href="#articles">玩法攻略</a>
-    <a href="#service">联系客服</a>
+    <a href="#service" class="hn-svc" onclick="openSvcModal();return false;">联系客服</a>
   </nav>
   <h1>精品手游<em>攻略站</em></h1>
   <p class="hero-slogan">汇聚传奇、三国、回合制热门手游，攻略礼包客服一站式</p>
@@ -6386,6 +6459,38 @@ function nbClose(){
   bar.hidden = true;
   try{ localStorage.setItem('nbClosed', '1'); }catch(e){}
 }
+
+/* ===== 联系客服弹层：二维码 + 微信号 ===== */
+function openSvcModal(){
+  var m = document.getElementById('svcModal');
+  if(!m) return;
+  var card = m.querySelector('.svc-modal-card');
+  if(card){
+    var vw = (window.visualViewport && window.visualViewport.width) || window.innerWidth || 1280;
+    var lw = document.documentElement.clientWidth || 1280;
+    var sc = (lw > 0 && vw > 0) ? lw / vw : 1;
+    sc = Math.max(1, Math.min(4.5, sc));
+    card.style.setProperty('--svc-scale', sc);
+  }
+  m.hidden = false;
+  document.documentElement.style.overflow = 'hidden';
+  var btn = m.querySelector('.sm-copy');
+  if(btn) setTimeout(function(){ try{ btn.focus({preventScroll:true}); }catch(e){} }, 80);
+}
+function closeSvcModal(){
+  var m = document.getElementById('svcModal');
+  if(!m) return;
+  m.hidden = true;
+  document.documentElement.style.overflow = '';
+}
+(function(){
+  var m = document.getElementById('svcModal');
+  if(!m) return;
+  m.addEventListener('click', function(e){ if(e.target === m) closeSvcModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !m.hidden) closeSvcModal();
+  });
+})();
 /* 导航放大镜：滚到攻略搜索框并聚焦 */
 function navSearch(){
   var el = document.getElementById('searchInput');
@@ -6397,5 +6502,24 @@ function navSearch(){
   }, 460);
 }
 </script>
+
+<!-- ===== 联系客服弹层 ===== -->
+<div class="svc-modal" id="svcModal" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle" hidden>
+  <div class="svc-modal-card">
+    <button class="sm-close" type="button" onclick="closeSvcModal()" aria-label="关闭客服弹层">×</button>
+    <div class="sm-badge">🎧 客服小姐姐在线秒回</div>
+    <h3 class="sm-title" id="svcModalTitle">加客服 · <b>领专属福利</b></h3>
+    <p class="sm-sub">微信扫码加好友，或复制下面的微信号搜索添加<br>下载链接 / 礼包码 / 开荒指导一次拿齐</p>
+    <div class="sm-qr">
+      <img src="assets/qr-service.webp" alt="客服微信二维码：扫码添加好友领取礼包" width="480" height="480" loading="lazy" decoding="async">
+    </div>
+    <div class="sm-id">
+      <span class="sm-id-label">客服微信号</span>
+      <b>LYLOVEZLL1314999</b>
+    </div>
+    <button class="sm-copy" type="button" onclick="copyWechat()">📋 一键复制微信号</button>
+    <p class="sm-tip">长按二维码也能识别 · 复制后到微信「添加朋友」粘贴即可</p>
+  </div>
+</div>
 </body>
 </html>
