@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>传奇盛世移动版-3D点卡攻略合集 · 精品手游攻略站</title>
+<meta name="description" content="传奇盛世移动版-3D点卡攻略共 6 篇：点卡计时 · 3D 传奇 · 移动互通。传奇盛世 3D 点卡版：真 3D 画面，点卡只买时长不卖强度，装备全靠打、野外爆装自由交易，移动端畅玩，点一下封面图即可…">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ac:#D25A1E;--ac-soft:#FDEEE2;--ink:#2D3A2E;--ink2:#6B7A6C;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.65;
+  background:
+    radial-gradient(circle at 10% 0%, #FDEEE2 0%, transparent 42%),
+    radial-gradient(circle at 94% 4%, #FFF3E2 0%, transparent 40%),
+    var(--paper);
+  min-height:100vh;padding:0 14px 56px;
+}
+.wrap{max-width:760px;margin:0 auto}
+/* 顶栏 */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 2px;margin:0 -14px 14px;padding:10px 16px;
+  background:rgba(255,251,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+.back{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-weight:700;
+}
+.back:hover{color:var(--ac);border-color:var(--ac)}
+.brand{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand i{font-style:normal;color:var(--ac)}
+/* 头图：按原图比例展示，不裁切，避免切头 */
+.hero{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:#1B1526;
+  border:3px solid #fff;box-shadow:0 12px 26px -10px rgba(80,50,30,.35);
+}
+.hero img{width:100%;height:auto;display:block}
+.hero-head{padding:14px 4px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 10px;
+  font-size:11.5px;font-weight:800;border-radius:999px;
+  background:var(--ac-soft);color:var(--ac);
+  border:1.5px solid rgba(0,0,0,.04);
+}
+.chip.hot{background:#FF4444;color:#fff;border-color:#FF4444}
+.hero-head h1{font-size:25px;font-weight:900;letter-spacing:.5px;line-height:1.3}
+.tagline{font-size:12.5px;color:var(--ink2);margin-top:4px}
+/* 简介 & 信息卡 */
+.intro{
+  margin:16px 2px 14px;font-size:13.5px;color:var(--ink2);
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;
+}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+.fact{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 13px;
+  box-shadow:0 6px 16px -12px rgba(80,50,30,.3);
+}
+.fk{display:block;font-size:11px;color:var(--ink2);letter-spacing:.4px}
+.fv{font-size:13px;font-weight:800;color:var(--ac)}
+/* 文章列表 */
+.list h2{font-size:16px;display:flex;align-items:baseline;gap:8px}
+.list h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.entries{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.entry{
+  display:flex;align-items:stretch;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:13px 14px;text-decoration:none;color:var(--ink);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 22px -14px var(--ac)}
+.e-date{
+  flex:0 0 52px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--ac-soft);border-radius:12px;color:var(--ac);
+}
+.e-date i{font-style:normal;font-size:14.5px;font-weight:900;font-variant-numeric:tabular-nums}
+.e-date em{font-style:normal;font-size:10px;opacity:.75}
+.e-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.e-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--ink2)}
+.e-tag{
+  display:inline-flex;align-items:center;height:17px;padding:0 7px;
+  background:var(--ac);color:#fff;border-radius:6px;
+  font-size:10.5px;font-weight:800;line-height:1;
+}
+.e-title{font-size:14.5px;font-weight:800;line-height:1.45}
+.e-dek{
+  font-size:12px;color:var(--ink2);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.e-foot{font-size:10.5px;color:#B7A597;margin-top:2px}
+.e-arrow{
+  flex:0 0 auto;align-self:center;color:var(--ac);
+  font-weight:900;font-size:16px;opacity:.55;transition:transform .18s,opacity .18s;
+}
+.entry:hover .e-arrow{transform:translateX(3px);opacity:1}
+/* 底部 CTA & 页脚 */
+.cta{margin:26px 0 8px;text-align:center}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(160deg,var(--ac),var(--ac));
+  color:#fff;text-decoration:none;font-weight:900;font-size:14px;
+  padding:12px 26px;border-radius:999px;
+  box-shadow:0 8px 18px -6px var(--ac);
+}
+.cta-btn:hover{filter:brightness(1.06)}
+.cta p{margin-top:10px;font-size:11.5px;color:var(--ink2)}
+.foot{margin-top:22px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+.foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
+.foot a:hover{color:var(--ac)}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+}
+/* ========== 方框 · 流光边框（光带绕框旋转，与首页一致） ========== */
+@property --flA{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes flowBorder{to{--flA:360deg}}
+.back,.chip,.intro,.fact,.entry,.jv-card,.bk-card,.cta-btn{position:relative}
+.back::after,.intro::after,.fact::after,.entry::after,.jv-card::after{inset:-2px;padding:2.2px}
+.chip::after,.bk-id::after{inset:-1.5px;padding:1.7px}
+.cta-btn::after{inset:-2.4px;padding:2.6px}
+.bk-card::after{inset:0;padding:2.2px}
+.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.back:hover::after,.chip:hover::after,.entry:hover::after{animation-duration:2s}
+.hero,.jcard{
+  --flA:0deg;border-color:transparent;
+  background-image:linear-gradient(#1B1526,#1B1526),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.jcard{
+  background-image:linear-gradient(#fff,#fff),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.jcard,.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../">← 返回首页</a>
+  <span class="brand">精品<i>手游</i>攻略站</span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <img src="../../assets/cssj-slide.jpg" alt="传奇盛世移动版-3D点卡" fetchpriority="high">
+  </section>
+  <div class="hero-head">
+    <div class="chips"><span class="chip hot">点卡计时</span><span class="chip">3D 传奇</span><span class="chip">移动互通</span></div>
+    <h1>传奇盛世移动版-3D点卡</h1>
+    <p class="tagline">点卡计时 · 3D 传奇 · 移动互通 · 收录 6 篇攻略</p>
+  </div>
+
+  <p class="intro">传奇盛世 3D 点卡版：真 3D 画面，点卡只买时长不卖强度，装备全靠打、野外爆装自由交易，移动端畅玩，点一下封面图即可直接下载。</p>
+
+  <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">3D 传奇 · 点卡版</span></div><div class="fact"><span class="fk">计费</span><span class="fv">点卡计时 · 时长购买</span></div><div class="fact"><span class="fk">平台</span><span class="fv">移动端</span></div><div class="fact"><span class="fk">下载</span><span class="fv">点击本站封面图直达</span></div></section>
+
+
+  <section class="list">
+    <h2>传奇盛世移动版-3D点卡 · 全部 6 篇<small>点开任意一篇直接展开全文</small></h2>
+    <div class="entries">
+<a class="entry" href="../../index.html?a=14jozgw">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">传奇3D点卡版开荒指引：先看时长，15 级再转土城</span>
+        <span class="e-dek">点卡服开荒先管好两件事：点卡时长别一上来烧光，15 级自动传送土城前把新手区的活干完。六步照着走，装备成型再进矿区地牢。</span>
+        <span class="e-foot">约 1 分钟 · 4 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=15h6pro">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">传奇3D点卡版账本：1 元玩 10 小时，离线也在计时</span>
+        <span class="e-dek">1 元 = 10 点卡 = 600 分钟。钱买的是「玩多久」不是「有多强」，把换算和离线计费两条规则吃透，成本账就清楚了。</span>
+        <span class="e-foot">约 1 分钟 · 3 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1f6wsnm">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">传奇3D点卡版交易入门：玩家定价、5% 金币税与两道门槛</span>
+        <span class="e-dek">金币价格由玩家挂单决定，收币方承担 5% 金币税；金币行与摆摊需首充开启，面对面交易需累计充值 200 元。门槛挡的是小号，不是生意。</span>
+        <span class="e-foot">约 1 分钟 · 3 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1w715zv">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">传奇3D点卡版掉落规则：死亡会掉装备，材料件件有用</span>
+        <span class="e-dek">非绑定装备死亡掉落，掉落概率全公开。书页、黑铁、兽皮、祝福油各有用途——打宝从看脸变成查表作业。</span>
+        <span class="e-foot">约 1 分钟 · 3 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1afx5q5">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">传奇3D点卡版职业分工：战士扛、法师清、道士兜底</span>
+        <span class="e-dek">创建界面只有战法道三个职业。战士顶前排、法师清场、道士续航控场——组队配合比充值额度重要，挂机可以、外挂不行。</span>
+        <span class="e-foot">约 1 分钟 · 3 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1meyqio">
+      <span class="e-date"><i>11.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">传奇3D</span><span>2026-11-18</span></span>
+        <span class="e-title">晚进服别慌：传奇3D点卡版等级补领，免费追到世界等级 -3</span>
+        <span class="e-dek">满足条件的角色可免费补到「世界等级 - 3」，不用熬夜爆肝抢排名。附晚进服第一周的安排表。</span>
+        <span class="e-foot">约 1 分钟 · 3 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="cta-btn" href="../../">← 回首页看全部游戏与攻略</a>
+    <p>客服一对一发下载链接与专属礼包 · 本页已被逛过 <b id="subHits" hidden>—</b> 次</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="../../">精品手游攻略站</a> · <a href="../../stats.html">站点数据</a><br>
+  本页面为推广信息聚合，游戏内容版权归各开发商所有
+</footer>
+
+<script>
+/* 分站浏览计数：失败静默 */
+try{
+  fetch('https://abacus.jasoncameron.dev/hit/jingyu3269.github.io/g-cq3d', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (d && typeof d.value === 'number'){
+        var el = document.getElementById('subHits');
+        if (el){ el.textContent = d.value; el.hidden = false; }
+      }
+    }).catch(function(){});
+}catch(e){}
+</script>
+
+</body>
+</html>
