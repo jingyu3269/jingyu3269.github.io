@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精灵永恒攻略合集 · 精品手游攻略站</title>
+<meta name="description" content="精灵永恒攻略共 12 篇：怀旧精灵 · 3D MMO。怀旧精灵3D MMO：精灵切换配队、技能把控定胜负，摆摊打金、圣物养成，三端互通。第二赛季圣物系统解锁后战力大幅提升，开…">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ac:#7B5BD6;--ac-soft:#F0EAFE;--ink:#2D3A2E;--ink2:#6B7A6C;--line:#F0E4D6;--paper:#FFFBF3}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+  color:var(--ink);line-height:1.65;
+  background:
+    radial-gradient(circle at 10% 0%, #F0EAFE 0%, transparent 42%),
+    radial-gradient(circle at 94% 4%, #FFF3E2 0%, transparent 40%),
+    var(--paper);
+  min-height:100vh;padding:0 14px 56px;
+}
+.wrap{max-width:760px;margin:0 auto}
+/* 顶栏 */
+.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 2px;margin:0 -14px 14px;padding:10px 16px;
+  background:rgba(255,251,243,.92);backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+.back{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;color:var(--ink2);text-decoration:none;
+  background:#fff;border:2px solid var(--line);border-radius:999px;
+  padding:4px 12px;font-weight:700;
+}
+.back:hover{color:var(--ac);border-color:var(--ac)}
+.brand{font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.5px}
+.brand i{font-style:normal;color:var(--ac)}
+/* 头图：按原图比例展示，不裁切，避免切头 */
+.hero{
+  position:relative;border-radius:22px;overflow:hidden;
+  background:#1B1526;
+  border:3px solid #fff;box-shadow:0 12px 26px -10px rgba(80,50,30,.35);
+}
+.hero img{width:100%;height:auto;display:block}
+.hero-head{padding:14px 4px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 10px;
+  font-size:11.5px;font-weight:800;border-radius:999px;
+  background:var(--ac-soft);color:var(--ac);
+  border:1.5px solid rgba(0,0,0,.04);
+}
+.chip.hot{background:#FF4444;color:#fff;border-color:#FF4444}
+.hero-head h1{font-size:25px;font-weight:900;letter-spacing:.5px;line-height:1.3}
+.tagline{font-size:12.5px;color:var(--ink2);margin-top:4px}
+/* 简介 & 信息卡 */
+.intro{
+  margin:16px 2px 14px;font-size:13.5px;color:var(--ink2);
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 16px;
+}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:22px}
+.fact{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:11px 13px;
+  box-shadow:0 6px 16px -12px rgba(80,50,30,.3);
+}
+.fk{display:block;font-size:11px;color:var(--ink2);letter-spacing:.4px}
+.fv{font-size:13px;font-weight:800;color:var(--ac)}
+/* 文章列表 */
+.list h2{font-size:16px;display:flex;align-items:baseline;gap:8px}
+.list h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.entries{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.entry{
+  display:flex;align-items:stretch;gap:12px;
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:13px 14px;text-decoration:none;color:var(--ink);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 10px 22px -14px var(--ac)}
+.e-date{
+  flex:0 0 52px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--ac-soft);border-radius:12px;color:var(--ac);
+}
+.e-date i{font-style:normal;font-size:14.5px;font-weight:900;font-variant-numeric:tabular-nums}
+.e-date em{font-style:normal;font-size:10px;opacity:.75}
+.e-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.e-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--ink2)}
+.e-tag{
+  display:inline-flex;align-items:center;height:17px;padding:0 7px;
+  background:var(--ac);color:#fff;border-radius:6px;
+  font-size:10.5px;font-weight:800;line-height:1;
+}
+.e-title{font-size:14.5px;font-weight:800;line-height:1.45}
+.e-dek{
+  font-size:12px;color:var(--ink2);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.e-foot{font-size:10.5px;color:#B7A597;margin-top:2px}
+.e-arrow{
+  flex:0 0 auto;align-self:center;color:var(--ac);
+  font-weight:900;font-size:16px;opacity:.55;transition:transform .18s,opacity .18s;
+}
+.entry:hover .e-arrow{transform:translateX(3px);opacity:1}
+/* 底部 CTA & 页脚 */
+.cta{margin:26px 0 8px;text-align:center}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(160deg,var(--ac),var(--ac));
+  color:#fff;text-decoration:none;font-weight:900;font-size:14px;
+  padding:12px 26px;border-radius:999px;
+  box-shadow:0 8px 18px -6px var(--ac);
+}
+.cta-btn:hover{filter:brightness(1.06)}
+.cta p{margin-top:10px;font-size:11.5px;color:var(--ink2)}
+.foot{margin-top:22px;text-align:center;font-size:11.5px;color:#B7A597;line-height:1.9}
+.foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
+.foot a:hover{color:var(--ac)}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+}
+/* ========== 方框 · 流光边框（光带绕框旋转，与首页一致） ========== */
+@property --flA{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes flowBorder{to{--flA:360deg}}
+.back,.chip,.intro,.fact,.entry,.jv-card,.bk-card,.cta-btn{position:relative}
+.back::after,.intro::after,.fact::after,.entry::after,.jv-card::after{inset:-2px;padding:2.2px}
+.chip::after,.bk-id::after{inset:-1.5px;padding:1.7px}
+.cta-btn::after{inset:-2.4px;padding:2.6px}
+.bk-card::after{inset:0;padding:2.2px}
+.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{
+  content:"";position:absolute;border-radius:inherit;
+  --flA:0deg;
+  background:conic-gradient(from var(--flA),
+    rgba(255,150,192,.9) 0deg,rgba(255,150,192,.9) 26deg,
+    #FF2E85 42deg,#FF7FB8 50deg,#FFFFFF 58deg,#FFB05C 68deg,rgba(255,150,192,.9) 86deg,
+    rgba(255,150,192,.9) 206deg,
+    #FF2E85 222deg,#FF7FB8 230deg,#FFFFFF 238deg,#FFB05C 248deg,rgba(255,150,192,.9) 266deg,
+    rgba(255,150,192,.9) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:flowBorder 5s linear infinite;pointer-events:none;
+}
+.back:hover::after,.chip:hover::after,.entry:hover::after{animation-duration:2s}
+.hero,.jcard{
+  --flA:0deg;border-color:transparent;
+  background-image:linear-gradient(#1B1526,#1B1526),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+  background-origin:padding-box,border-box;
+  background-clip:padding-box,border-box;
+  animation:flowBorder 5s linear infinite;
+}
+.jcard{
+  background-image:linear-gradient(#fff,#fff),
+    conic-gradient(from var(--flA),
+      #FF7FB2 0deg,#FF5FA2 30deg,#fff 46deg,#FFC178 64deg,#FF7FB2 82deg,
+      #FF7FB2 212deg,#FF5FA2 242deg,#fff 258deg,#FFC178 276deg,#FF7FB2 294deg,#FF7FB2 360deg);
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.jcard,.back::after,.chip::after,.intro::after,.fact::after,.entry::after,.jv-card::after,.bk-id::after,.cta-btn::after,.bk-card::after{animation:none}
+}
+/*JOBS-CSS-START*/
+/* 职业图鉴 */
+.jobs{margin:4px 0 22px}
+.jobs-head h2{font-size:16px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.jobs-head h2 small{font-size:11.5px;color:var(--ink2);font-weight:400}
+.jobs-head p{font-size:11.5px;color:var(--ink2);margin-top:3px}
+.jv-group{margin-top:14px}
+.jv-glabel{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:900;letter-spacing:.4px;margin-bottom:9px}
+.jv-glabel::before{content:"";width:4px;height:13px;border-radius:2px;background:var(--ac)}
+.jv-glabel em{font-style:normal;font-weight:400;color:var(--ink2);font-size:11px}
+.jv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.jv-card{
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:9px;
+  transition:border-color .16s,box-shadow .16s,transform .16s;
+}
+.jv-card:hover{border-color:var(--ac);box-shadow:0 10px 22px -16px rgba(0,0,0,.35);transform:translateY(-2px)}
+.jv-shot{
+  position:relative;display:block;border-radius:10px;overflow:hidden;
+  background:#1B1526;border:1.5px solid #fff;
+  box-shadow:0 4px 12px -8px rgba(0,0,0,.5);
+}
+.jv-shot img{width:100%;height:auto;display:block}
+.jv-zoom{
+  position:absolute;right:6px;bottom:6px;
+  font-size:9.5px;font-weight:800;color:#fff;
+  background:rgba(0,0,0,.42);border-radius:999px;padding:2px 7px;
+  pointer-events:none;
+}
+.jv-cname{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.jv-cname b{font-size:15px;font-weight:900;letter-spacing:.5px}
+.jv-cname span{
+  font-size:10px;font-weight:800;color:var(--ac);
+  background:var(--ac-soft);border-radius:999px;padding:2px 7px;
+}
+.jv-stats{list-style:none;margin:7px 0 0}
+.jv-stats li{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:2.5px 0;font-size:11px;color:var(--ink2);
+}
+.jv-stars{font-style:normal;color:var(--ac);font-size:11px;letter-spacing:.8px;white-space:nowrap}
+.jv-desc{font-size:11px;color:var(--ink2);line-height:1.6;margin-top:7px}
+.jv-adv{font-size:10px;color:#B7A597;margin-top:6px}
+.jv-adv b{color:var(--ac);font-weight:800}
+/* 五维数值条（精灵永恒） */
+.jv-nums{margin:8px 0 0}
+.jv-nums li{display:grid;grid-template-columns:34px 1fr 26px;align-items:center;gap:7px;padding:2px 0}
+.jv-nums .k{font-size:10.5px;color:var(--ink2)}
+.jv-nums .bar{height:5px;border-radius:99px;background:var(--ac-soft);overflow:hidden}
+.jv-nums .bar i{display:block;height:100%;border-radius:99px;background:var(--ac);opacity:.85}
+.jv-nums .v{font-size:11px;font-weight:900;color:var(--ac);font-variant-numeric:tabular-nums;text-align:right}
+.jv-skills{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.jv-skills span{
+  font-size:9.5px;font-weight:800;color:var(--ink2);
+  background:#F7F3EC;border-radius:6px;padding:2px 6px;
+}
+
+@media (max-width:560px){
+  .hero-head h1{font-size:21px}
+  .facts{grid-template-columns:1fr 1fr;gap:8px}
+  .fact{padding:9px 11px}
+  .fv{font-size:12px}
+  .e-dek{-webkit-line-clamp:2}
+  .jv-grid{grid-template-columns:1fr}
+}
+/*JOBS-CSS-END*/
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../../">← 返回首页</a>
+  <span class="brand">精品<i>手游</i>攻略站</span>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <img src="../../assets/cover-jingling2.webp" alt="精灵永恒" fetchpriority="high">
+  </section>
+  <div class="hero-head">
+    <div class="chips"><span class="chip hot">热门</span><span class="chip">3D精灵</span><span class="chip">MMO打宝</span></div>
+    <h1>精灵永恒</h1>
+    <p class="tagline">怀旧精灵 · 3D MMO · 收录 12 篇攻略</p>
+  </div>
+
+  <p class="intro">怀旧精灵3D MMO：精灵切换配队、技能把控定胜负，摆摊打金、圣物养成，三端互通。第二赛季圣物系统解锁后战力大幅提升，开荒期基础材料最值钱。</p>
+
+  <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">3D精灵 · MMO</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS / PC 三端互通</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">精灵切换 · 圣物养成</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">摆摊打金 · 赛季玩法</span></div></section>
+
+
+  <!--JOBS-SECTION-START-->
+  <section class="jobs">
+    <div class="jobs-head">
+      <h2>职业图鉴<small>八大职业 · 创建角色面板实测</small></h2>
+      <p>五维数值取自游戏内「创建角色」的职业面板（满分 10）；点截图可看大图</p>
+    </div>
+    <div class="jv-group">
+      <div class="jv-glabel">职业一览<em>下面按登录界面职业栏从上到下的顺序排列</em></div>
+      <div class="jv-grid">
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-wushi.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-wushi.webp" alt="精灵永恒 武士 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>武士</b><span>近战 · 全能输出</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:96%"></i></span><span class="v">9.6</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:87%"></i></span><span class="v">8.7</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></li>
+      </ul>
+      <p class="jv-desc">作为武士的身心经过严格的战斗训练，在近战中展现出强大的威力。经过长时间的锻炼，身体变得异常强壮，极大地提升了战斗能力。</p>
+      <div class="jv-skills"><span>一段</span><span>二段</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-qiangbing.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-qiangbing.webp" alt="精灵永恒 枪兵 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>枪兵</b><span>近战 · 长兵突刺</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:95%"></i></span><span class="v">9.5</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:87%"></i></span><span class="v">8.7</span></li>
+      </ul>
+      <p class="jv-desc">枪兵偏爱华丽而强力的技术，尽管这些大幅度的动作容易暴露他们的弱点，但其手中的长矛总能给予敌人致命一击。</p>
+      <div class="jv-skills"><span>两段</span><span>群攻</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-gongjian.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-gongjian.webp" alt="精灵永恒 弓箭手 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>弓箭手</b><span>远程 · 高暴击</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:91%"></i></span><span class="v">9.1</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:93%"></i></span><span class="v">9.3</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:96%"></i></span><span class="v">9.6</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:87%"></i></span><span class="v">8.7</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:91%"></i></span><span class="v">9.1</span></li>
+      </ul>
+      <p class="jv-desc">作为传说中弓手迪恩的后裔，弓箭手以其广阔的视野和卓越的远程攻击能力，在战场上对敌人构成了巨大威胁。</p>
+      <div class="jv-skills"><span>一段</span><span>二段</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-jixie.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-jixie.webp" alt="精灵永恒 机械兵 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>机械兵</b><span>近战 · 高生存</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:91%"></i></span><span class="v">9.1</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:97%"></i></span><span class="v">9.7</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:87%"></i></span><span class="v">8.7</span></li>
+      </ul>
+      <p class="jv-desc">机械兵是一个独具特色的职业。他们虽不能自行制造机器，但对古代匠人所打造的装备却有着深入的理解和精湛的操作技巧。</p>
+      <div class="jv-skills"><span>一段</span><span>连击</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-yingci.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-yingci.webp" alt="精灵永恒 影刺 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>影刺</b><span>近战 · 双持刺客 · 第 2 赛季</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:96%"></i></span><span class="v">9.6</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:91%"></i></span><span class="v">9.1</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:96%"></i></span><span class="v">9.6</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:88%"></i></span><span class="v">8.8</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:95%"></i></span><span class="v">9.5</span></li>
+      </ul>
+      <p class="jv-desc">作为坦普种族中独一无二的女战士，她不仅外表与柔弱形象截然相反，更具备双手持械作战的非凡能力。在关键时刻，她能够运用多种手段对敌人构成威胁。</p>
+      <div class="jv-skills"><span>两段</span><span>三段</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-jisi.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-jisi.webp" alt="精灵永恒 祭司 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>祭司</b><span>远程 · 治疗辅助</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:88%"></i></span><span class="v">8.8</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:88%"></i></span><span class="v">8.8</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:99%"></i></span><span class="v">9.9</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:89%"></i></span><span class="v">8.9</span></li>
+      </ul>
+      <p class="jv-desc">踏入了与神最接近的领域，始终过着追求神圣的生活。相较于直接参与战斗，她更擅长在后方支援队友。</p>
+      <div class="jv-skills"><span>二段</span><span>辅助</span><span>群体回血</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-mofa.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-mofa.webp" alt="精灵永恒 魔法师 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>魔法师</b><span>远程 · 群体爆发</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:98%"></i></span><span class="v">9.8</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:88%"></i></span><span class="v">8.8</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:89%"></i></span><span class="v">8.9</span></li>
+      </ul>
+      <p class="jv-desc">对真理和知识充满热情的魔法师们，凭借强大的精神力量拥有非凡的魔力。一旦决定施法，便能以强大的魔法瞬间击倒敌人。</p>
+      <div class="jv-skills"><span>两段</span><span>群体</span><span>群攻</span></div>
+    </article>
+    <article class="jv-card">
+      <a class="jv-shot" href="../../assets/jingling-job-youxia.webp" target="_blank" rel="noopener">
+        <img src="../../assets/jingling-job-youxia.webp" alt="精灵永恒 游侠 职业面板截图" loading="lazy" width="1400" height="788">
+        <span class="jv-zoom">放大</span>
+      </a>
+      <div class="jv-cname"><b>游侠</b><span>近战 · 均衡</span></div>
+      <ul class="jv-nums">
+      <li><span class="k">爆发</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">群攻</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      <li><span class="k">暴击</span><span class="bar"><i style="width:91%"></i></span><span class="v">9.1</span></li>
+      <li><span class="k">生存</span><span class="bar"><i style="width:95%"></i></span><span class="v">9.5</span></li>
+      <li><span class="k">机动</span><span class="bar"><i style="width:92%"></i></span><span class="v">9.2</span></li>
+      </ul>
+      <p class="jv-desc">神赐予他们的身体是最纯粹的礼物，在修炼过程中，他们比任何人更加精进。当他们挥舞长剑时，展现出最强大的威力。</p>
+      <div class="jv-skills"><span>一段</span><span>三段</span><span>群攻</span></div>
+    </article>
+      </div>
+    </div>
+  </section>
+<!--JOBS-SECTION-END-->
+
+  <section class="list">
+    <h2>精灵永恒 · 全部 12 篇<small>点开任意一篇直接展开全文</small></h2>
+    <div class="entries">
+<a class="entry" href="../../index.html?a=i674cw">
+      <span class="e-date"><i>11.03</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-11-03</span></span>
+        <span class="e-title">精灵养成攻略：少走弯路，稳步提升</span>
+        <span class="e-dek">精灵分破坏/回复/经验三类，开荒别死磕SSR，集中资源养一到两只主力，按场景切换才是正解。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1iift60">
+      <span class="e-date"><i>11.02</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-11-02</span></span>
+        <span class="e-title">萌新入门：赛季玩法详解（上篇）</span>
+        <span class="e-dek">领地最多占两块、榜单季中季末各结算一次；新赛季战功军衔天赋全清零，被低军衔击败扣战功更多。</span>
+        <span class="e-foot">约 2 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=pnenb">
+      <span class="e-date"><i>11.01</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-11-01</span></span>
+        <span class="e-title">八大职业怎么选，开荒选错真的会难受</span>
+        <span class="e-dek">坦普物理、魔灵法系两大种族八个职业：武士抗揍、弓箭手安全、魔法师清怪最快、祭司组队刚需，影刺要等第二赛季。</span>
+        <span class="e-foot">约 1 分钟 · 7 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1347bay">
+      <span class="e-date"><i>10.30</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-30</span></span>
+        <span class="e-title">散人打宝与摆摊变现：哪些东西真能换钱</span>
+        <span class="e-dek">紫装看遗忘之塔，橙装看组队副本，顶级货看世界BOSS最后一击；摆摊不抽税、交易行30分钟自动下架，宝石不能交易。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1gjsg93">
+      <span class="e-date"><i>10.26</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-26</span></span>
+        <span class="e-title">0-30 级开荒路线：主线、悬赏、加点一次讲清</span>
+        <span class="e-dek">开局别泡野外刷怪，主线才解锁仓库、强化、副本、精灵、转职；卡级去支线+五星悬赏，加点先满足装备门槛。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=h93ozb">
+      <span class="e-date"><i>10.25</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-25</span></span>
+        <span class="e-title">遗忘之塔与副本：每天该刷哪几个</span>
+        <span class="e-dek">遗忘之塔免费次数必打，稳定出宝石与精灵碎片；诅咒神殿、没落都市才是高阶装备产地，别硬冲高层。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1ga4n6m">
+      <span class="e-date"><i>10.23</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-23</span></span>
+        <span class="e-title">第二赛季圣物系统解锁，战力飞跃</span>
+        <span class="e-dek">圣物系统全新上线，圣物获取途径与养成路线，战力大幅提升方法。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=1ples8v">
+      <span class="e-date"><i>10.22</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-22</span></span>
+        <span class="e-title">新手入门避坑指南，少走弯路</span>
+        <span class="e-dek">经济曲线跟随服务器进度，开荒期基础材料最值钱，别乱花前期资源。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=xnxp7k">
+      <span class="e-date"><i>10.22</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-22</span></span>
+        <span class="e-title">前期升级全攻略：光速度过开荒期</span>
+        <span class="e-dek">1-30级主线无脑冲，30级后解锁副本和日常，升级节奏与等级压制关系。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=e4ahl9">
+      <span class="e-date"><i>10.21</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-21</span></span>
+        <span class="e-title">战斗进阶：精灵切换+技能把控</span>
+        <span class="e-dek">战斗不是站桩输出，配队站位很重要，切换精灵打连招，技能释放时机。</span>
+        <span class="e-foot">约 1 分钟 · 5 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=8ni93d">
+      <span class="e-date"><i>10.21</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-21</span></span>
+        <span class="e-title">日常周常怎么清最快，奖励还能拿满</span>
+        <span class="e-dek">登录+世界聊天+补药水就拿一半活跃，再2次组队副本+8次悬赏即满；精灵神殿和遗忘之塔可以不做。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+<a class="entry" href="../../index.html?a=66f9df">
+      <span class="e-date"><i>10.18</i><em>2026</em></span>
+      <span class="e-body">
+        <span class="e-meta"><span class="e-tag">精灵</span><span>2026-10-18</span></span>
+        <span class="e-title">转职试炼通关攻略：不是拉高战力就能过</span>
+        <span class="e-dek">试炼分小怪与首领两阶段，先清召唤物再打BOSS；血量25%进狂暴，技能留到这时候用才是通关关键。</span>
+        <span class="e-foot">约 1 分钟 · 6 节 · 点击展开全文</span>
+      </span>
+      <span class="e-arrow" aria-hidden="true">→</span>
+    </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="cta-btn" href="../../">← 回首页看全部游戏与攻略</a>
+    <p>客服一对一发下载链接与专属礼包 · 本页已被逛过 <b id="subHits" hidden>—</b> 次</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="../../">精品手游攻略站</a> · <a href="../../stats.html">站点数据</a><br>
+  本页面为推广信息聚合，游戏内容版权归各开发商所有
+</footer>
+
+<script>
+/* 分站浏览计数：失败静默 */
+try{
+  fetch('https://abacus.jasoncameron.dev/hit/jingyu3269.github.io/g-jingling', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (d && typeof d.value === 'number'){
+        var el = document.getElementById('subHits');
+        if (el){ el.textContent = d.value; el.hidden = false; }
+      }
+    }).catch(function(){});
+}catch(e){}
+</script>
+
+</body>
+</html>
