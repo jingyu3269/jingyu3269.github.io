@@ -1812,6 +1812,7 @@ html.share-open,html.share-open body{overflow:hidden}
 .article-card.liancheng{--ag1:#4FE0B0;--ag2:#0E9C74;--acc:#0B7A5B;--ashadow:rgba(14,156,116,.42);--awash:rgba(79,224,176,.16);--sticker:"🏹"}
 .article-card.cq3d{--ag1:#FFB25C;--ag2:#D25A1E;--acc:#A8430F;--ashadow:rgba(210,90,30,.42);--awash:rgba(255,178,92,.18);--sticker:"⚔️"}
 .article-card.wulin{--ag1:#8FD8A6;--ag2:#2E9E6B;--acc:#1A7A4C;--ashadow:rgba(46,158,107,.4);--awash:rgba(143,216,166,.18);--sticker:"🏮"}
+.article-card.dbwl{--ag1:#B388FF;--ag2:#6A3FD6;--acc:#4D2A9E;--ashadow:rgba(106,63,214,.4);--awash:rgba(179,136,255,.16);--sticker:"🥋"}
 .article-card::before{
   content:"";position:absolute;inset:3px;border-radius:19px;
   background:radial-gradient(140% 105% at 0% 0%,var(--awash) 0%,transparent 62%);
@@ -3147,6 +3148,12 @@ html.poster-open,html.poster-open body{overflow:hidden}
         <span class="dz-guide">👇 点这里直接下载安装包</span>
         <span class="dz-cta">点击立即下载</span>
       </a>
+      <a class="dz-item" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxNTIsNTE1MSwyMzE1MTVd" target="_blank" rel="noopener" aria-label="点击立即下载 独步武林-天卡服">
+        <span class="dz-icon"><img src="assets/icon-dbwl.webp" alt="独步武林-天卡服" width="72" height="72" loading="lazy" decoding="async"></span>
+        <span class="dz-name">独步武林-天卡服</span>
+        <span class="dz-guide">👇 点这里直接下载安装包</span>
+        <span class="dz-cta">点击立即下载</span>
+      </a>
       <div class="dz-item" aria-label="桃园·将帅录 安卓/苹果下载">
         <span class="dz-icon"><img src="assets/dl-taoyuan-v3.webp" alt="桃园·将帅录" width="72" height="72" loading="lazy" decoding="async"></span>
         <span class="dz-name">桃园·将帅录</span>
@@ -3300,6 +3307,19 @@ html.poster-open,html.poster-open body{overflow:hidden}
       <div class="game-body">
         <div class="game-name">武林外传：十年之约</div>
         <a class="game-sub" href="g/wulin/">📖 进入分站 · 8 篇攻略</a>
+      </div>
+    </div>
+
+    <!-- 独步武林-天卡服 -->
+    <div class="game-card gc-violet" data-icon="assets/icon-dbwl.webp" data-game="独步武林-天卡服"
+         data-href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxNTIsNTE1MSwyMzE1MTVd" data-cta="⬇ 立即下载">
+      <span class="gc-sticker">🥋</span>
+      <a class="game-cover" href="https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxNTIsNTE1MSwyMzE1MTVd" target="_blank" rel="noopener" style="display:block;cursor:pointer" aria-label="下载独步武林-天卡服">
+        <img src="assets/cover-dbwl.webp" alt="独步武林-天卡服" loading="lazy" decoding="async">
+      </a>
+      <div class="game-body">
+        <div class="game-name">独步武林-天卡服</div>
+        <a class="game-sub" href="g/dbwl/">📖 进入分站 · 3 篇攻略</a>
       </div>
     </div>
 
@@ -3916,6 +3936,38 @@ function openKuaishou(e){
 // ===== 攻略文章数据 =====
 // full: 展开全文的分节内容；src: 来源（公众号原文）
 var ARTICLES = [
+  // ---------- 11-23 新增：独步武林-天卡服 三篇 ----------
+  {game:'独步武林-天卡服', tag:'独步武林', title:'五个职业怎么选：剑客爆发、刀客耐打、枪客均衡、医生组队必备、弓手风筝', date:'2026-11-23',
+   summary:'创角界面就摆着五个职业，选错一个，前期刷怪效率差一大截。按「近战/远程」「单刷/组队」两条线拆开看，其实很好定。',
+   full:[
+     {h:'先看官方给的定位', p:'创建角色界面右侧写着每个职业的特点：剑客体力低、防御一般，但攻击速度快、命中率高；刀客偏向高防高血、扛得住；枪客各项均衡，攻守都不突出但都能打；医生是治疗与辅助，组队离不开；弓手远程输出，靠距离和安全位置吃饭。定位看明白，剩下的就是你想怎么玩。'},
+     {h:'剑客：前期最爽，后期最吃操作', p:'攻击速度快、命中也高，前期清怪手感是最好的，缺点是血薄防低，被两三只怪围住就容易躺。适合喜欢贴脸打、愿意盯血线的玩家。刷图建议一次拉两三个，别贪多，打完再走。'},
+     {h:'刀客与枪客：稳健派的两个选择', p:'刀客防高血厚，容错最大，挂机党、手残党、想边看剧边刷怪的人首选；枪客属性均衡，输出和生存都不拔尖，好处是任何队伍都能插进去。零氪、不想在操作上花心思的，这两个最省心。'},
+     {h:'医生：单人最慢，组队最香', p:'医生输出能力有限，自己刷怪节奏明显慢，但治疗和辅助让它成为组队的硬需求——副本、团战、打 BOSS 都缺不了。如果你有固定队或者能进活跃行会，医生是投入产出最划算的职业；纯单机玩家慎选。'},
+     {h:'弓手：远程安全，走位要勤', p:'弓手靠距离打输出，位置站对了几乎不掉血，站错了被怪贴脸就很危险。适合喜欢风筝、愿意走位的人。挂机时要注意别把怪引成一堆，远程最怕的就是被围。'},
+     {h:'一句话结论', p:'想爽快贴脸选剑客，想稳当挂机选刀客，想万金油选枪客，有固定队选医生，喜欢远程风筝选弓手。具体数值与技能以游戏内说明为准，转职分支建议先按自己的刷图习惯选，不要照抄别人的加点。'}
+   ],
+   src:{name:'精品手游攻略站'}},
+  {game:'独步武林-天卡服', tag:'独步武林', title:'天卡服怎么玩：按天计费，时间就是成本，前 35 级这样排最省', date:'2026-11-23',
+   summary:'天卡服不吃充值吃在线时长，每一天卡都要花在能推进度的事上。主线打底、日常补量、打宝留到晚上人多的时候，这三件事的顺序决定你一天能升多少。',
+   full:[
+     {h:'天卡服的核心逻辑：买的是时间', p:'天卡服按天计费，不卖属性、不卖装备，你花的钱本质上是买一天的在线时长。所以玩法思路和免费服不同：不要用「挂着耗时间」的方式玩，要把每天的有效时间集中到产出最高的事情上——主线、日常、打宝，这三件事排好，一天抵别人两天。'},
+     {h:'上线第一件事：清主线', p:'主线永远优先。主线给经验、给装备、解锁功能与地图，等级不到连高级怪都打不动。建议一次上线先把主线推到卡关（等级不够或任务要求打不过的怪），再去补其他内容。卡关就去刷当前等级段最合适的怪，别越级硬打，效率反而低。'},
+     {h:'日常与福利：固定时段一次做完', p:'日常任务、福利大厅里的登录好礼和挑战 BOSS 这些，都是每天一次的固定产出，不做就浪费了。建议固定一个时间段（晚上人多的时候）连着做完：先领福利，再做日常，最后去打 BOSS，一趟下来不用来回跑地图。'},
+     {h:'打宝放在人多的时候：抢得到才是你的', p:'这款游戏的掉落规则很直接——爆出的物品没有归属，所有人都能捡。这意味着打宝不只是输出比拼，还是手速和站位的比拼。组队打 BOSS 时提前清空背包、站在掉落点附近，出了东西第一时间捡；单人抢野图 BOSS 尽量挑人少的线路和时段。'},
+     {h:'别把天卡浪费在挂机上', p:'天卡服最怕的就是「开着游戏干别的」。真要挂机，选安全区附近的低风险刷怪点，设置好自动喝药，别在高级图挂——死了掉经验、装备耐久也掉，反而亏。每天下线前把背包清一遍，材料该卖的卖、该合的合，第二天上线直接开干。具体计费方式与掉落规则以游戏内公告为准。'}
+   ],
+   src:{name:'精品手游攻略站'}},
+  {game:'独步武林-天卡服', tag:'独步武林', title:'福利大厅挑战 BOSS 怎么打：爆物无归属，站位和背包比输出更重要', date:'2026-11-23',
+   summary:'福利大厅里四个 BOSS 全都在「存活中」，掉落规则写得很清楚：爆出物品无归属，所有人都可捡取。想拿到东西，进图前这几件事先做好。',
+   full:[
+     {h:'先读懂规则：没有归属，只有先捡到', p:'福利大厅的挑战 BOSS 面板底部有一行说明：爆出物品无归属，所有人都可捡取。翻译一下：不管输出第一还是最后一名，东西落地那一刻谁先捡到就是谁的。所以打 BOSS 的正确心态不是「我要打最高伤害」，而是「我要站在掉落点上，并且背包有位置」。'},
+     {h:'进图前：清背包、修装备、带够药', p:'背包塞满是最亏的情况——东西掉在脚下却捡不起来。进图前把材料整理一遍、垃圾卖掉或分解，至少留出十几格空位。装备耐久修满、药带够，别打到一半回城补给，回来 BOSS 已经被别人打了。'},
+     {h:'站位：贴着 BOSS 打，别站外围', p:'掉落一般在 BOSS 死亡位置附近散开，站得越近捡得越快。近战职业天然占优势；远程和医生要注意别为了站位被秒，站在 BOSS 侧后方、保持输出距离的同时尽量往里靠。'},
+     {h:'组队怎么配合：一人盯掉落', p:'如果跟行会或朋友一起打，提前分工：输出高的负责压血，手速快的专门盯掉落。别所有人都埋头打，出了东西互相看，最后被别人从旁边捡走。队伍里最好约定分配方式（按需/轮流），避免打完内讧。'},
+     {h:'什么时候打：避开高峰期抢野图', p:'福利大厅的 BOSS 每天有固定次数，尽量在人数少的时段打；野外 BOSS 同理，凌晨和上午通常人少。人多的时候打 BOSS，掉落一散开就是一场混战，收益反而不如自己安稳刷图。具体 BOSS 刷新时间、次数与奖励以游戏内为准。'}
+   ],
+   src:{name:'精品手游攻略站'}},
   // ---------- 11-23 新增：武林外传 三篇（加点/搬砖/帮派） ----------
   {game:'武林外传：十年之约', tag:'武林', title:'技能加点别乱点：通用优先、流派后点，洗点道具留到三转再花', date:'2026-11-23',
    summary:'加点思路比加点方案更重要：先点通用输出和生存，三转定流派后再补分支技能。洗点道具数量有限，别在二转阶段就挥霍掉。',
@@ -4677,7 +4729,8 @@ var GAME_ICONS = {
   liancheng: 'assets/icon-liancheng.webp',
   taoyuan: 'assets/icon-taoyuan.webp',
   cq3d: 'assets/icon-cq3d-v2.webp',
-  wulin: 'assets/icon-wulin.webp'
+  wulin: 'assets/icon-wulin.webp',
+  dbwl: 'assets/icon-dbwl.webp'
 };
 function iconOf(cls){ return GAME_ICONS[cls] || GAME_ICONS.taoyuan; }
 
@@ -4690,7 +4743,8 @@ var GAME_DL = {
   wulin: {name:'武林外传·十年之约', icon:'assets/dl-wulin.webp', tip:'官方安装包', href:'https://sdkn-ldy.zhangyu39.com/?app_id=7669&amp;promote_id=2038'},
   luna: {name:'露娜2·拾光之约', icon:'assets/icon-luna.webp', tip:'公测预约中', href:'g/luna2/'},
   jingling: {name:'精灵永恒', icon:'assets/icon-jingling.webp', tip:'进入分站', href:'g/jingling/'},
-  liancheng: {name:'英雄连城', icon:'assets/icon-liancheng.webp', tip:'进入分站', href:'g/liancheng/'}
+  liancheng: {name:'英雄连城', icon:'assets/icon-liancheng.webp', tip:'进入分站', href:'g/liancheng/'},
+  dbwl: {name:'独步武林·天卡服', icon:'assets/icon-dbwl.webp', tip:'官方安装包', href:'https://231515.youxin75.com/qudao.php?s=/Download/f/WzUxNTIsNTE1MSwyMzE1MTVd'}
 };
 
 // 今晚吃什么：折叠态右下角的小转盘
@@ -4916,7 +4970,7 @@ function renderArticles(list, kw){
   for(var i = 0; i < shown.length; i++){
     var a = shown[i];
     var key = articleKey(a);
-    var cls = a.game.indexOf('小小') >= 0 ? 'tulong' : (a.game.indexOf('精灵') >= 0 ? 'jingling' : (a.game.indexOf('露娜') >= 0 ? 'luna' : (a.game.indexOf('连城') >= 0 ? 'liancheng' : (a.game.indexOf('传奇3D') >= 0 ? 'cq3d' : (a.game.indexOf('武林') >= 0 ? 'wulin' : '')))));
+    var cls = a.game.indexOf('小小') >= 0 ? 'tulong' : (a.game.indexOf('精灵') >= 0 ? 'jingling' : (a.game.indexOf('露娜') >= 0 ? 'luna' : (a.game.indexOf('连城') >= 0 ? 'liancheng' : (a.game.indexOf('传奇3D') >= 0 ? 'cq3d' : (a.game.indexOf('独步') >= 0 ? 'dbwl' : (a.game.indexOf('武林') >= 0 ? 'wulin' : ''))))));
     var isOpen = !!expanded[key] || !!(kw && autoOpen[key]);
     var isRead = !!readSet[key];
     html += '<div class="article-card ' + cls + (isOpen ? ' open' : '') + (isRead ? ' read' : '') + '" data-key="' + esc(key) + '">';
