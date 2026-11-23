@@ -116,6 +116,31 @@ body{
 .foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
 .foot a:hover{color:var(--ac)}
 
+.gal{margin:2px 0 24px}
+.gal-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.gal-h h2{font-size:16px;font-weight:900;letter-spacing:.3px}
+.gal-h span{font-size:11.5px;color:var(--ink2)}
+.gal-hero,.gal-cell{
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  overflow:hidden;box-shadow:0 10px 24px -16px rgba(80,50,30,.4);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.gal-hero:hover,.gal-cell:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 24px -12px var(--ac)}
+.gal-hero>a,.gal-cell>a{display:block;text-decoration:none}
+.gal-hero img,.gal-cell img{width:100%;height:auto;display:block;background:#F3EADF}
+.gal-hero figcaption,.gal-cell figcaption{
+  padding:9px 12px 10px;font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.2px;
+}
+.gal-hero figcaption b{color:var(--ac);margin-right:6px}
+.gal-hero figcaption small{display:block;font-size:10.5px;font-weight:400;color:var(--ink2);margin-top:2px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+/* 单数张时最后一张占满整行，避免半行空着 */
+.gal-grid .gal-cell:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:560px){
+  .gal-grid{grid-template-columns:1fr}
+  .gal-hero figcaption,.gal-cell figcaption{font-size:11.5px;padding:8px 10px 9px}
+}
+
 /* ===== 游戏下载专区（分站） ===== */
 .dlz{
   margin:2px 0 24px;padding:16px 15px 17px;border-radius:20px;
@@ -261,7 +286,26 @@ body{
   <p class="intro">传奇盛世 3D 点卡版：真 3D 画面，点卡只买时长不卖强度，装备全靠打、野外爆装自由交易，移动端畅玩，点一下封面图即可直接下载。</p>
 
   <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">3D 传奇 · 点卡版</span></div><div class="fact"><span class="fk">计费</span><span class="fv">点卡计时 · 时长购买</span></div><div class="fact"><span class="fk">平台</span><span class="fv">移动端</span></div><div class="fact"><span class="fk">下载</span><span class="fv">点击本站封面图直达</span></div></section>
-
+<section class="gal">
+    <div class="gal-h"><h2>游戏内实拍</h2><span>点卡充值 · 开服公告 · 三职业创角 · 点图片看大图</span></div>
+    
+    <div class="gal-grid"><figure class="gal-cell">
+      <a href="../../assets/cq3d-shot-1.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/cq3d-shot-1.webp" alt="传奇盛世3D点卡版 点卡充值界面实拍：多档点卡与余额" loading="lazy" decoding="async">
+      </a>
+      <figcaption>点卡充值 · 1 元 = 10 点卡</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/cq3d-shot-2.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/cq3d-shot-2.webp" alt="传奇盛世3D点卡版 游戏内公告面板实拍：开服公告与测试说明" loading="lazy" decoding="async">
+      </a>
+      <figcaption>开服公告 · 11.20–11.26 删档测试</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/cq3d-shot-3.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/cq3d-shot-3.webp" alt="传奇盛世3D点卡版 创建角色界面实拍：战法道三职业" loading="lazy" decoding="async">
+      </a>
+      <figcaption>创建角色 · 战士 / 法师 / 道士</figcaption>
+    </figure></div>
+  </section>
 
   <section class="dlz" aria-labelledby="dlzT">
     <div class="dlz-head">
