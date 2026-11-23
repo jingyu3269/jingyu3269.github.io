@@ -116,6 +116,31 @@ body{
 .foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
 .foot a:hover{color:var(--ac)}
 
+.gal{margin:2px 0 24px}
+.gal-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.gal-h h2{font-size:16px;font-weight:900;letter-spacing:.3px}
+.gal-h span{font-size:11.5px;color:var(--ink2)}
+.gal-hero,.gal-cell{
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  overflow:hidden;box-shadow:0 10px 24px -16px rgba(80,50,30,.4);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.gal-hero:hover,.gal-cell:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 24px -12px var(--ac)}
+.gal-hero>a,.gal-cell>a{display:block;text-decoration:none}
+.gal-hero img,.gal-cell img{width:100%;height:auto;display:block;background:#F3EADF}
+.gal-hero figcaption,.gal-cell figcaption{
+  padding:9px 12px 10px;font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.2px;
+}
+.gal-hero figcaption b{color:var(--ac);margin-right:6px}
+.gal-hero figcaption small{display:block;font-size:10.5px;font-weight:400;color:var(--ink2);margin-top:2px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+/* 单数张时最后一张占满整行，避免半行空着 */
+.gal-grid .gal-cell:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:560px){
+  .gal-grid{grid-template-columns:1fr}
+  .gal-hero figcaption,.gal-cell figcaption{font-size:11.5px;padding:8px 10px 9px}
+}
+
 /* ===== 游戏下载专区（分站） ===== */
 .dlz{
   margin:2px 0 24px;padding:16px 15px 17px;border-radius:20px;
@@ -261,7 +286,36 @@ body{
   <p class="intro">经典同福客栈 IP 正版武侠 MMO，十年之约全员回归：绿色版不卖属性，等级与装备全靠日常积累，帮派结义是核心，组队刷本收益远高于单干，三端同服随时回来。</p>
 
   <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">武侠 MMO · 绿色版</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS / PC 三端同服</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">十年情怀 IP · 绿色不肝</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">帮派结义 · 组队副本</span></div></section>
-
+<section class="gal">
+    <div class="gal-h"><h2>游戏内实拍与官方素材</h2><span>百级三转 · 八大职业 · 团队挑战 · 点图片看大图</span></div>
+    <figure class="gal-hero">
+      <a href="../../assets/wulin-shot-1.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/wulin-shot-1.webp" alt="武林外传：十年之约 官方素材：百级巅峰已至 三转震撼来袭，八大职业群像" loading="lazy" decoding="async">
+      </a>
+      <figcaption><b>▲</b>百级巅峰已至 · 三转震撼来袭<small>官方素材 · 点击图片可看原始大图</small></figcaption>
+    </figure>
+    <div class="gal-grid"><figure class="gal-cell">
+      <a href="../../assets/wulin-shot-2.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/wulin-shot-2.webp" alt="武林外传 实机截图：天师职业战斗画面，八大职业经典再现" loading="lazy" decoding="async">
+      </a>
+      <figcaption>八大职业经典再现 · 续写武林传奇</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/wulin-shot-3.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/wulin-shot-3.webp" alt="武林外传 实机截图：邪皇背包与物品面板，升级加速减负畅游" loading="lazy" decoding="async">
+      </a>
+      <figcaption>升级加速 减负畅游 · 尽享武林之趣</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/wulin-shot-4.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/wulin-shot-4.webp" alt="武林外传 实机截图：剑圣多人团队战斗场景" loading="lazy" decoding="async">
+      </a>
+      <figcaption>全新团队挑战 · 奖励众人共享</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/wulin-shot-5.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/wulin-shot-5.webp" alt="武林外传 实机截图：刀君装备属性面板，红装为尊" loading="lazy" decoding="async">
+      </a>
+      <figcaption>红装为尊 · 开启神兵时代</figcaption>
+    </figure></div>
+  </section>
 
   <section class="dlz" aria-labelledby="dlzT">
     <div class="dlz-head">
