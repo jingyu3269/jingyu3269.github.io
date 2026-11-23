@@ -116,6 +116,31 @@ body{
 .foot a{color:#B7A597;text-decoration:none;border-bottom:1px dashed #E0D2C4}
 .foot a:hover{color:var(--ac)}
 
+.gal{margin:2px 0 24px}
+.gal-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+.gal-h h2{font-size:16px;font-weight:900;letter-spacing:.3px}
+.gal-h span{font-size:11.5px;color:var(--ink2)}
+.gal-hero,.gal-cell{
+  background:#fff;border:2px solid var(--line);border-radius:16px;
+  overflow:hidden;box-shadow:0 10px 24px -16px rgba(80,50,30,.4);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.gal-hero:hover,.gal-cell:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 12px 24px -12px var(--ac)}
+.gal-hero>a,.gal-cell>a{display:block;text-decoration:none}
+.gal-hero img,.gal-cell img{width:100%;height:auto;display:block;background:#F3EADF}
+.gal-hero figcaption,.gal-cell figcaption{
+  padding:9px 12px 10px;font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.2px;
+}
+.gal-hero figcaption b{color:var(--ac);margin-right:6px}
+.gal-hero figcaption small{display:block;font-size:10.5px;font-weight:400;color:var(--ink2);margin-top:2px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+/* 单数张时最后一张占满整行，避免半行空着 */
+.gal-grid .gal-cell:last-child:nth-child(odd){grid-column:1/-1}
+@media (max-width:560px){
+  .gal-grid{grid-template-columns:1fr}
+  .gal-hero figcaption,.gal-cell figcaption{font-size:11.5px;padding:8px 10px 9px}
+}
+
 /* ===== 游戏下载专区（分站） ===== */
 .dlz{
   margin:2px 0 24px;padding:16px 15px 17px;border-radius:20px;
@@ -261,7 +286,21 @@ body{
   <p class="intro">经典冰雪复古传奇：从起源冰城起步，攒够转生材料进二大陆冰雪之城。装备不过商城、毕业装全靠野外掉落，散人自由交易，打金变现无门槛。</p>
 
   <section class="facts"><div class="fact"><span class="fk">游戏类型</span><span class="fv">冰雪复古 · 单职业</span></div><div class="fact"><span class="fk">平台</span><span class="fv">安卓 / iOS 双端</span></div><div class="fact"><span class="fk">核心特色</span><span class="fv">装备全靠打 · 自由交易</span></div><div class="fact"><span class="fk">重点玩法</span><span class="fv">转生进阶 · 打金攻沙</span></div></section>
-
+<section class="gal">
+    <div class="gal-h"><h2>游戏内玩法实拍</h2><span>碎灵换灵符 · 低阶逆袭高阶 · 点图片看大图</span></div>
+    
+    <div class="gal-grid"><figure class="gal-cell">
+      <a href="../../assets/xxtl-shot-1.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/xxtl-shot-1.webp" alt="小小屠龙 碎灵打金界面：碎灵兑换灵符" loading="lazy" decoding="async">
+      </a>
+      <figcaption>碎灵兑换灵符 · 终身收益</figcaption>
+    </figure><figure class="gal-cell">
+      <a href="../../assets/xxtl-shot-2.webp" target="_blank" rel="noopener" title="点击看大图">
+        <img src="../../assets/xxtl-shot-2.webp" alt="小小屠龙 好运轮盘：低阶装备材料逆袭高阶" loading="lazy" decoding="async">
+      </a>
+      <figcaption>低阶装备材料逆袭高阶</figcaption>
+    </figure></div>
+  </section>
 
   <section class="dlz" aria-labelledby="dlzT">
     <div class="dlz-head">
